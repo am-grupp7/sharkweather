@@ -1,21 +1,32 @@
 <template>
     <div>
-        <div class="temp">{{heading}}</div>
+        <div class="heading">{{heading}}</div>
         <div>
             <ol>
                 <li v-for="contender in topList" :key="contender.key">
-                    <span
-                        >{{ contender.name }}: {{ contender.temperature }} {{ unit }}</span
-                    >
+                    <span>{{ contender.name }}: {{ contender.value }} {{ unit }}</span>
                 </li>
             </ol>
         </div>
     </div>
 </template>
+<style scoped>
+.heading {
+    background-color: #F0F7FE;
+}
+
+div {
+    background-color: #DAEAFB;
+}
+
+span {
+
+}
+</style>
 
 <script>
 export default {
-    name: 'TempBoard',
+    name: 'TopTenBoard',
     props: {
         apiCall: {
         type:String
@@ -33,7 +44,7 @@ export default {
         }
     },
     methods: {
-        async fetchTopListTemp() {
+        async fetchTopListValue() {
             const resp = await fetch(
                 `https://opendata-download-metobs.smhi.se/api/version/latest/parameter/${this.apiCall}/station-set/all/period/latest-hour/data.json`,
                 { headers: { Accept: 'application/json' } }
@@ -45,29 +56,25 @@ export default {
                     let topListContender = {
                         name: station.name,
                         key: station.key,
-                        temperature: Number(station.value[0].value),
+                        value: Number(station.value[0].value),
                     }
                     this.topList.push(topListContender)
                 }
-                this.topList.sort(this.sortTemp)
+                this.topList.sort(this.sortValue)
                 this.topList.length = 10
             }
         },
-        sortTemp(a, b) {
-            return a.temperature > b.temperature
+        sortValue(a, b) {
+            return a.value > b.value
                 ? -1
-                : b.temperature > a.temperature
+                : b.value > a.value
                 ? 1
                 : 0
         },
     },
     created() {
-        this.fetchTopListTemp()
+        this.fetchTopListValue()
     },
 }
 </script>
-<style scoped>
-div {
-    border: 1px solid black;
-}
-</style>
+

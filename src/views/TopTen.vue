@@ -4,19 +4,46 @@
         <h1>Topp 10-lista</h1>
         <p>Se var i landet det är varmast, regnar mest eller är blåsigast just nu.</p>
         <h2>datum...</h2>
-        <temp-board api-call="1" heading="Temperatur °c" unit="°c"></temp-board>
-        <temp-board api-call="7" heading="Nederbörd mm" unit="mm"></temp-board>
-        <temp-board api-call="4" heading="Vindstyrka m/s" unit="m/s"></temp-board>
+        <div class="boards">
+            <div class="inner">
+                <top-ten-board api-call="1" heading="Temperatur °c" unit="°c"></top-ten-board>
+            </div>
+            <div class="inner">
+                <top-ten-board api-call="7" heading="Nederbörd mm" unit="mm"></top-ten-board>
+            </div>
+            <div class="inner">
+                <top-ten-board api-call="4" heading="Vindstyrka m/s" unit="m/s"></top-ten-board>
+            </div>
+        </div>
 
     </div>
 </template>
 
 <script>
-    import TempBoard from '../components/TempBoard.vue'
+    import TopTenBoard from '../components/TopTenBoard.vue'
     export default {
         name: 'TopTen',
         components: {
-            TempBoard
+            TopTenBoard
         }
     }
 </script>
+
+<style>
+    .main-topten {
+        
+    }
+
+    .boards {
+        display: flex;
+        flex-direction: row;
+        padding: 0%;
+        
+    }
+    .inner {
+        padding: 2%;
+        width: 33%;
+        
+    }
+
+</style>
