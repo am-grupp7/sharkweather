@@ -43,7 +43,7 @@ export default {
   },
   data() {
     return {
-      date: format(new Date(), "'Today is a' MMMM", { locale: sv }),
+      date: format(new Date(), "'Idag, 'd MMMM", { locale: sv }),
     };
   },
 };
