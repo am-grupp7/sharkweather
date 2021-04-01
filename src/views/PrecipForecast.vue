@@ -1,28 +1,76 @@
 <template>
     <div class="main-precipforecast">
-        <nav>Start > Nederbördsprognos</nav>
-        <div class="info">
-            <div class="header">
-                <h2>Nederbörd</h2>
-                <p>bla bla bla</p>
-            </div>
-            <div class="breadtext">
-                <h3>Om nederbörd</h3>
-                <p>bla bla bla</p>
-                <p>bla bla bla</p>
-                <p>bla bla bla</p>
-                <p>bla bla bla</p>
-                <p>bla bla bla</p>
-            </div>
+        <div class="innertop">
+            <nav>Start > Nederbördsprognos</nav>
+            <div class="find-location">här kan man söka efter städer</div>
         </div>
-        <div class="graphcontent">
-
+        <div class="innerbottom">
+            <div class="info">
+                <div class="header">
+                    <h2>Nederbörd</h2>
+                    <p>bla bla bla</p>
+                </div>
+                <div class="breadtext">
+                    <h3>Om nederbörd</h3>
+                    <p>bla bla bla</p>
+                    <p>bla bla bla</p>
+                    <p>bla bla bla</p>
+                    <p>bla bla bla</p>
+                    <p>bla bla bla</p>
+                    <p>bla bla bla</p>
+                    <p>bla bla bla</p>
+                    <p>bla bla bla</p>
+                    <p>bla bla bla</p>
+                    <p>bla bla bla</p>
+                </div>
+            </div>
+            <div class="graphcontent">super fina grafer 'n' shit</div>
         </div>
     </div>
 </template>
 <script>
-
+/*import TopTenBoard from '../components/TopTenBoard.vue'
+export default {
+    name: 'TopTen',
+    components: {
+        TopTenBoard,
+    },
+}*/
 </script>
 
 <style scoped>
+div {
+    border: 1px solid black;
+}
+.main-precipforecast {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 7fr;
+}
+.innertop {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+nav {
+    margin-right: 57%;
+    margin-top: 1.5em;
+}
+.find-location {
+    padding-top: 1.5em;
+}
+
+.innerbottom {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.info {
+    width: 30%;
+    background-color: #daeafb;
+}
+.graphcontent {
+    width: 70%;
+}
 </style>
