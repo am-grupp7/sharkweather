@@ -25,7 +25,8 @@ const routes = [
     {
         path: '/precipforecast',
         name: 'PrecipForecast',
-
+        component: () =>
+            import(/* webpackChunkName: "about" */ '../views/PrecipForecast.vue'),
     },
 ]
 

@@ -43,7 +43,7 @@
     .inner {
         padding: 2%;
         width: 33%;
-        
+        border: 1px solid black;
     }
 
 </style>
