@@ -55,7 +55,7 @@ export default {
     methods: {
         async fetchPrecipListValue() {
             const resp = await fetch(
-                `https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/16/lat/58/data.json`,
+                `https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/11.97/lat/57.7/data.json`,
                 { headers: { Accept: 'application/json' } }
             )
             const json = await resp.json()
@@ -63,20 +63,23 @@ export default {
 
             for (const timeSeries of json.timeSeries) {
                 let precip = Number(timeSeries.parameters[16].values)
-                
+
                 let time = timeSeries.validTime
-                
+
                 this.precipListValues.push(precip)
                 this.precipListTimes.push(time)
             }
-            this.series = [{
-                name: 'Nederbörd',
-                data: this.precipListValues,
-            }]
-            this.chartOptions.xaxis = {
-                categories: []
+            this.series = [
+                {
+                    name: 'Nederbörd',
+                    data: this.precipListValues,
+                },
+            ]
+            this.chartOptions.xaxis.categories.length = 0
+            for (let val of this.precipListTimes) {
+                this.chartOptions.xaxis.categories.push(val)
             }
-            console.log(this.precipListValues)
+            console.log(this.precipListTimes)
         },
     },
     created() {
