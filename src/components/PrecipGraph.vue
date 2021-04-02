@@ -16,6 +16,7 @@
 </style>
 
 <script>
+import {format} from "date-fns";
 export default {
     name: 'PrecipGraph',
 
@@ -59,7 +60,6 @@ export default {
                 { headers: { Accept: 'application/json' } }
             )
             const json = await resp.json()
-            //console.log(json)
 
             for (const timeSeries of json.timeSeries) {
                 let precip = Number(timeSeries.parameters[16].values)
@@ -69,6 +69,10 @@ export default {
                 this.precipListValues.push(precip)
                 this.precipListTimes.push(time)
             }
+                this.precipListValues.length = 24
+                this.precipListTimes.length = 24
+                console.log(this.precipListValues)
+                console.log(this.precipListTimes)
             this.series = [
                 {
                     name: 'Nederbörd',
@@ -77,9 +81,9 @@ export default {
             ]
             this.chartOptions.xaxis.categories.length = 0
             for (let val of this.precipListTimes) {
-                this.chartOptions.xaxis.categories.push(val)
+                let formattedDate = format(new Date(val), "HH")
+                this.chartOptions.xaxis.categories.push(formattedDate)
             }
-            console.log(this.precipListTimes)
         },
     },
     created() {

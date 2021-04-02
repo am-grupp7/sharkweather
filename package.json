@@ -12,6 +12,7 @@
   "dependencies": {
     "apexcharts": "^3.26.0",
     "core-js": "^3.6.5",
+    "date-fns": "^2.19.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
     "vue3-apexcharts": "^1.2.1"
