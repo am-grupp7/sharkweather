@@ -3,7 +3,12 @@
         <div class="dayselector">Måndag Tisdag Onsdag...</div>
         <div class="city">Göteborg</div>
         <div class="chart">
-            <apexchart type="bar" height="400" :options="chartOptions" :series="series"></apexchart>
+            <apexchart
+                type="bar"
+                height="400"
+                :options="chartOptions"
+                :series="series"
+            ></apexchart>
         </div>
     </div>
 </template>
@@ -11,8 +16,6 @@
 </style>
 
 <script>
-//import VueApexCharts from 'vue3-apexcharts';
-
 export default {
     name: 'PrecipGraph',
 
@@ -20,38 +23,34 @@ export default {
         return {
             precipListValues: [],
             precipListTimes: [],
-            series: [{
-                name: 'Nederbörd',
-                data: this.precipListValues,
-            }],
+
+            series: [],
             chartOptions: {
                 chart: {
                     type: 'bar',
-                    height: 400
+                    height: 400,
                 },
                 plotOptions: {
                     bar: {
                         horizontal: false,
                         columnWidth: '100%',
-                        endingShape: 'rounded'
+                        endingShape: 'rounded',
                     },
                 },
                 dataLabels: {
-                    enabled: false
+                    enabled: false,
                 },
                 stroke: {
                     show: true,
                     width: 2,
-                    colors: ['transparent']
+                    colors: ['transparent'],
                 },
 
                 xaxis: {
-                    categories: [1, 2, 3, 4, 5],
+                    categories: [],
                 },
-
             },
         }
-
     },
     methods: {
         async fetchPrecipListValue() {
@@ -61,20 +60,23 @@ export default {
             )
             const json = await resp.json()
             //console.log(json)
-            
+
             for (const timeSeries of json.timeSeries) {
-                let precipListValue = {
-                    
-                    precip: Number(timeSeries.parameters[16].values),
-                }
-                let precipListTime = {
-                    time: timeSeries.validTime,
-                }
-                this.precipListValues.push(precipListValue)
-                this.precipListTimes.push(precipListTime)
-                //this.precipList.length = 24
+                let precip = Number(timeSeries.parameters[16].values)
+                
+                let time = timeSeries.validTime
+                
+                this.precipListValues.push(precip)
+                this.precipListTimes.push(time)
             }
-                console.log(this.precipList)
+            this.series = [{
+                name: 'Nederbörd',
+                data: this.precipListValues,
+            }]
+            this.chartOptions.xaxis = {
+                categories: []
+            }
+            console.log(this.precipListValues)
         },
     },
     created() {
