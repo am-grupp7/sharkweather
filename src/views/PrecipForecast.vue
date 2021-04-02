@@ -24,18 +24,21 @@
                     <p>bla bla bla</p>
                 </div>
             </div>
-            <div class="graphcontent">super fina grafer 'n' shit</div>
+            <div class="graphcontent">
+                <precip-graph></precip-graph>
+            </div>
         </div>
     </div>
 </template>
 <script>
-/*import TopTenBoard from '../components/TopTenBoard.vue'
+import PrecipGraph from '../components/PrecipGraph.vue'
 export default {
-    name: 'TopTen',
+    name: 'PrecipForecast',
     components: {
-        TopTenBoard,
+        PrecipGraph,
     },
-}*/
+}
+
 </script>
 
 <style scoped>

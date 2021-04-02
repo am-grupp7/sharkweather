@@ -63,6 +63,7 @@ export default {
                 this.topList.sort(this.sortValue)
                 this.topList.length = 10
             }
+                    
         },
         sortValue(a, b) {
             return a.value > b.value
