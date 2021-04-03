@@ -51,15 +51,32 @@ export default {
 
 <style scoped>
 .main-topten {
+  text-align: left;
+  margin-left: 8%;
+  margin-right: 8%;
 }
 
 .boards {
   display: flex;
   flex-direction: row;
-  padding: 0%;
 }
+
+@media (max-width: 800px) {
+  .boards {
+    flex-direction: column;
+  }
+}
+
 .inner {
-  padding: 2%;
-  width: 33%;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 3em;
+  background-color: #daeafb;
+  margin: 15px;
 }
 </style>
