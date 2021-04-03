@@ -70,7 +70,7 @@ export default {
   padding-left: 10px;
   padding-bottom: 15px;
   padding-top: 15px;
-  
+  width: 33%;
   font-weight: bold;
   font-size: 18px;
   line-height: 3em;
