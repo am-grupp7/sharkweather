@@ -32,6 +32,7 @@
 </template>
 <script>
 import PrecipGraph from "../components/PrecipGraph.vue";
+//import test from '../components/test.vue'
 export default {
   name: "PrecipForecast",
   components: {

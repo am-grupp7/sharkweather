@@ -28,6 +28,13 @@ const routes = [
     component: () =>
       import(/*webpackChunkName: "tempforecast" */ "../views/TempForecast.vue"),
   },
+
+  {
+    path: "/precipforecast",
+    name: "PrecipForecast",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/PrecipForecast.vue"),
+  },
 ];
 
 const router = createRouter({
