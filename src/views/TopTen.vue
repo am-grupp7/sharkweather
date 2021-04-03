@@ -10,21 +10,25 @@
       <div class="inner">
         <top-ten-board
           api-call="1"
-          heading="Temperatur °c"
+          heading="Temperatur"
+          count="1."
+          plus="+"
           unit="°c"
         ></top-ten-board>
       </div>
       <div class="inner">
         <top-ten-board
           api-call="7"
-          heading="Nederbörd mm"
+          heading="Nederbörd"
+          count="1."
           unit="mm"
         ></top-ten-board>
       </div>
       <div class="inner">
         <top-ten-board
           api-call="4"
-          heading="Vindstyrka m/s"
+          heading="Vindstyrka"
+          count="1."
           unit="m/s"
         ></top-ten-board>
       </div>
@@ -54,12 +58,6 @@ export default {
   flex-direction: row;
 }
 
-@media (max-width: 800px) {
-  .boards {
-    flex-direction: column;
-  }
-}
-
 .inner {
   padding-right: 10px;
   padding-left: 10px;
@@ -70,6 +68,6 @@ export default {
   font-size: 18px;
   line-height: 3em;
   background-color: #daeafb;
-  margin: 15px;
+  margin-right: 2em;
 }
 </style>

@@ -1,40 +1,46 @@
 <template>
-  <div class="a">
-    <div class="heading">{{ heading }}</div>
-    <div class="b">
-      <ol>
-        <li v-for="contender in topList" :key="contender.key">
-          <span>{{ contender.name }} </span>
-          <span>{{ contender.value }} {{ unit }}</span>
-        </li>
-      </ol>
-    </div>
+  <div class="heading">
+    <div class="heading-logo"></div>
+    <div class="heading-title">{{ heading }}</div>
+    <div class="unit-heading">{{ unit }}</div>
   </div>
+
+  <ol>
+    <li v-for="contender in topList" :key="contender.key">
+      <span>{{ count }} {{ contender.name }} </span>
+      <span>{{ plus }} {{ contender.value }} {{ unit }}</span>
+    </li>
+  </ol>
 </template>
 <style scoped>
 .heading {
+  display: flex;
+  flex-direction: row;
+  height: 4em;
   background-color: #f0f7fe;
   margin-top: 30px;
-  margin-left: 0px;
-  margin-right: 0px;
+  justify-content: center;
+}
+
+.heading-logo {
+}
+
+.heading-title {
   font-size: 24px;
   font-weight: normal;
-  text-align: center;
+  align-self: center;
 }
 
-div {
-  background-color: #daeafb;
-}
-
-.a {
-  border: 0px solid #daeafb;
-  margin-top: 2em;
+.unit-heading {
+  font-size: 18px;
+  font-weight: bold;
+  align-self: flex-end;
 }
 
 li {
   display: flex;
   justify-content: space-between;
-  padding-right: 2em;
+  padding-right: 3em;
 }
 </style>
 
@@ -46,6 +52,12 @@ export default {
       type: String,
     },
     heading: {
+      type: String,
+    },
+    count: {
+      type: String,
+    },
+    plus: {
       type: String,
     },
     unit: {
