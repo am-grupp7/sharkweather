@@ -8,7 +8,7 @@
 <style scoped>
 input {
     background-color: white;
-    border: 1px solid blue;
+    border: 1px solid black;
     border-radius: 25px;
     height: 2em;
 }

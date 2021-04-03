@@ -105,7 +105,8 @@ export default {
             }
 
             //this.precipListValues.length = 24
-            //this.precipListTimes.length = 24
+            //let dayOne = this.precipListValues[0-23]
+            this.precipListTimes.length = 24
             this.displayGraph()
         },
         displayGraph() {

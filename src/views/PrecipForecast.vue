@@ -7,21 +7,40 @@
         <div class="innerbottom">
             <div class="info">
                 <div class="header">
-                    <h2>Nederbörd</h2>
-                    <p>bla bla bla</p>
+                    <h3>Nederbörd</h3>
+                    <p>
+                        Här finns prognoser för nederbörd. <br>
+                        Välj en plats och dag som du vill se prognosen för.
+                        Prognoserna kommer från SHMIs öppna api.
+                    </p>
                 </div>
                 <div class="breadtext">
-                    <h3>Om nederbörd</h3>
-                    <p>bla bla bla</p>
-                    <p>bla bla bla</p>
-                    <p>bla bla bla</p>
-                    <p>bla bla bla</p>
-                    <p>bla bla bla</p>
-                    <p>bla bla bla</p>
-                    <p>bla bla bla</p>
-                    <p>bla bla bla</p>
-                    <p>bla bla bla</p>
-                    <p>bla bla bla</p>
+                    <h5>Om nederbörd</h5>
+                    <p>
+                        Vilken form nederbörden har när den når marken beror
+                        på vilken temperatur och fuktighet atmosfären har.
+                        Om snöflingorna hela tiden faller genom luftlager med
+                        minusgrader är det snö som når marken.
+                    </p>
+                    <p>
+                        Om snöflingorna faller genom luftlager med plusgrader kan 
+                        snöflingorna hinna smälta till regndroppar innan de når marken.
+                        Om luften är tillräckligt torr kan dock snöfall förekomma vid
+                        flera plusgrader.
+                    </p>
+                    <p>
+                        Om snöflingorna bara delvis hunnit smälta till regndroppar
+                        kallas det snöblandat regn.
+                    </p>
+                    <p>
+                        Om snöflingorna hunnit smälta till regndroppar och sedan faller genom
+                        ett kallt luftlager närmast marken kan underkylt regn bildas. Alternativt
+                        kan regndropparna frysa till iskorn.
+                    </p>
+                    <p>
+                        Nederbördspartiklar som upprepade gånger rör sig upp och ner genom
+                        lager med med underkylda molndroppar kan växa till hagelkorn.
+                    </p>
                 </div>
             </div>
             <div class="graphcontent">
@@ -75,5 +94,8 @@ nav {
 }
 .graphcontent {
     width: 70%;
+}
+p {
+    padding: 0.25em;
 }
 </style>
