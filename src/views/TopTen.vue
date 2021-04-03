@@ -5,7 +5,7 @@
     <p>
       Se var i landet det är varmast, regnar mest eller är blåsigast just nu.
     </p>
-    <h2>datum...</h2>
+    <h2>{{ date }}</h2>
     <div class="boards">
       <div class="inner">
         <top-ten-board
@@ -34,10 +34,17 @@
 
 <script>
 import TopTenBoard from "../components/TopTenBoard.vue";
+import { sv } from "date-fns/locale";
+import { format } from "date-fns";
 export default {
   name: "TopTen",
   components: {
     TopTenBoard,
+  },
+  data() {
+    return {
+      date: format(new Date(), "'Idag, 'd MMMM", { locale: sv }),
+    };
   },
 };
 </script>

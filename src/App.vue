@@ -1,36 +1,42 @@
 <template>
-  <div>
-    <div id="nav">
-      <router-link to="/">Start</router-link> |
-      <router-link to="/TopTen">Topp 10-lista</router-link> |
-      <router-link to="/">Soltimmar</router-link> |
-      <router-link to="/">UV-prognos</router-link> |
-      <router-link to="/">Nederbördsprognos</router-link> |
-      <router-link to="/">Om oss</router-link>
+    <div>
+        <div id="nav">
+            <router-link to="/">Start</router-link>
+            <router-link to="/TopTen">Topp 10-lista</router-link>
+            <router-link to="/">Soltimmar</router-link>
+            <router-link to="/">UV-prognos</router-link>
+            <router-link to="/">Nederbördsprognos</router-link>
+            <router-link to="/">Om oss</router-link>
+        </div>
+        <router-view />
     </div>
-    <router-view />
-  </div>
 </template>
 
 <style>
+body {
+    margin: 0%;
+}
 #app {
-  font-family: Tahoma;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+    font-family: Tahoma, Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
 }
 
 #nav {
-  padding: 30px;
+    padding: 1.5em;
+    background-color: #A2CCF3;
+    
 }
 
 #nav a {
-  font-weight: bold;
-  color: #2c3e50;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    margin: 2%;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+    color: #fdfdfd;
 }
 </style>
