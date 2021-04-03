@@ -60,9 +60,9 @@ export default {
                 { headers: { Accept: 'application/json' } }
             )
             const json = await resp.json()
-
+            
             for (const timeSeries of json.timeSeries) {
-                let precip = Number(timeSeries.parameters[16].values)
+                let precip = Number(timeSeries.parameters.name.values)
 
                 let time = timeSeries.validTime
 
