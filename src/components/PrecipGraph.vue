@@ -1,6 +1,8 @@
 <template>
     <div>
-        <div class="dayselector">Måndag Tisdag Onsdag...</div>
+        <div class="dayselector">
+            <day-select></day-select>
+        </div>
         <div class="city">Göteborg</div>
         <div class="chart">
             <apexchart
@@ -17,8 +19,12 @@
 
 <script>
 import { format } from 'date-fns'
+import DaySelect from '../components/DaySelect.vue'
 export default {
     name: 'PrecipGraph',
+    components: {
+        DaySelect,
+    },
 
     data() {
         return {
@@ -60,24 +66,22 @@ export default {
                 { headers: { Accept: 'application/json' } }
             )
             const json = await resp.json()
-            
-            for (const timeSeries of json.timeSeries) {
-                let precip = Number(timeSeries.parameters.name.values)
 
-                let time = timeSeries.validTime
+            for (const hourlyData of json.timeSeries) {
+                const precip = this.findPrecip(hourlyData.parameters)
 
                 this.precipListValues.push(precip)
-                this.precipListTimes.push(time)
+                this.precipListTimes.push(hourlyData.validTime)
             }
 
             this.precipListValues.length = 24
             this.precipListTimes.length = 24
-            console.log(this.precipListValues)
-            console.log(this.precipListTimes)
-
+            this.displayGraph()
+        },
+        displayGraph() {
             this.series = [
                 {
-                    name: 'Nederbörd',
+                    name: 'Nederbörd (mm)',
                     data: this.precipListValues,
                 },
             ]
@@ -85,6 +89,13 @@ export default {
             for (let val of this.precipListTimes) {
                 let formattedDate = format(new Date(val), 'HH')
                 this.chartOptions.xaxis.categories.push(formattedDate)
+            }
+        },
+        findPrecip(parameters) {
+            for (const param of parameters) {
+                if (param.name === 'pmean') {
+                    return param.values[0]
+                }
             }
         },
     },

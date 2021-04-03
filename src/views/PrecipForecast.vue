@@ -25,7 +25,6 @@
                 </div>
             </div>
             <div class="graphcontent">
-                <day-select></day-select>
                 <precip-graph></precip-graph>
             </div>
         </div>
@@ -33,16 +32,13 @@
 </template>
 <script>
 import PrecipGraph from '../components/PrecipGraph.vue'
-import DaySelect from '../components/DaySelect.vue'
+
 export default {
     name: 'PrecipForecast',
     components: {
         PrecipGraph,
-        DaySelect,
-        
     },
 }
-
 </script>
 
 <style scoped>
