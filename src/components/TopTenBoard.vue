@@ -1,26 +1,40 @@
 <template>
-    <div>
-        <div class="heading">{{heading}}</div>
-        <div>
-            <ol>
-                <li v-for="contender in topList" :key="contender.key">
-                    <span>{{ contender.name }}: {{ contender.value }} {{ unit }}</span>
-                </li>
-            </ol>
-        </div>
+  <div class="a">
+    <div class="heading">{{ heading }}</div>
+    <div class="b">
+      <ol>
+        <li v-for="contender in topList" :key="contender.key">
+          <span>{{ contender.name }} </span>
+          <span>{{ contender.value }} {{ unit }}</span>
+        </li>
+      </ol>
     </div>
+  </div>
 </template>
 <style scoped>
 .heading {
-    background-color: #F0F7FE;
+  background-color: #f0f7fe;
+  margin-top: 30px;
+  margin-left: 0px;
+  margin-right: 0px;
+  font-size: 24px;
+  font-weight: normal;
+  text-align: center;
 }
 
 div {
     background-color: #DAEAFB;
 }
 
-span {
+.a {
+  border: 0px solid #daeafb;
+  margin-top: 2em;
+}
 
+li {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 2em;
 }
 </style>
 
