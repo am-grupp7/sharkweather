@@ -104,8 +104,20 @@ export default {
                 this.precipListTimes.push(hourlyData.validTime)
             }
 
-            //this.precipListValues.length = 24
+            this.precipListValues.length = 24
             //let dayOne = this.precipListValues[0-23]
+            /*
+             *Lopa genom precipListValues och plocka ut rätt antal värden..
+             * någon funtion {
+             * let dayOneList = [] (ev i return?)
+             * let a
+             * for(i = 0; i <= 23; i++) {
+             *      a = this.precipListValues[i]
+             *      this.dayOneList.push(a)
+                   }
+             * }
+             *Plocka ut alla värden ur listan på något vis? 
+             */
             this.precipListTimes.length = 24
             this.displayGraph()
         },
