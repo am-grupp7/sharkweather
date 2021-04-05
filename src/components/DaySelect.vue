@@ -74,7 +74,8 @@ export default {
             this.selectedValues = String(this.chosenDayValues)
             this.selcetedTimes = String(this.chosenDayTimes)
             this.$emit('selected-values', this.chosenDayValues, this.chosenDayTimes)
-            
+            this.chosenDayValues = []
+            this.chosenDayTimes = []
         },
     },
 }
