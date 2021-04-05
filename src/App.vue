@@ -1,12 +1,12 @@
 <template>
     <div>
         <div id="nav">
-            <router-link to="/">Start</router-link>
-            <router-link to="/TopTen">Topp 10-lista</router-link>
-            <router-link to="/">Soltimmar</router-link>
-            <router-link to="/">UV-prognos</router-link>
-            <router-link to="/">Nederbördsprognos</router-link>
-            <router-link to="/">Om oss</router-link>
+            <router-link to="/">Start</router-link> 
+            <router-link to="/TopTen">Topp 10-lista</router-link> 
+            <router-link to="/">Soltimmar</router-link> 
+            <router-link to="/">UV-prognos</router-link> 
+            <router-link to="/PrecipForecast">Nederbördsprognos</router-link> 
+            <router-link to="/About">Om oss</router-link>
         </div>
         <router-view />
     </div>
