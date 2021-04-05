@@ -1,40 +1,40 @@
 <template>
-  <div class="a">
-    <div class="heading">{{ heading }}</div>
-    <div class="b">
-      <ol>
-        <li v-for="contender in topList" :key="contender.key">
-          <span>{{ contender.name }} </span>
-          <span>{{ contender.value }} {{ unit }}</span>
-        </li>
-      </ol>
+    <div class="a">
+        <div class="heading">{{ heading }}</div>
+        <div class="b">
+            <ol>
+                <li v-for="contender in topList" :key="contender.key">
+                    <span>{{ contender.name }} </span>
+                    <span>{{ contender.value }} {{ unit }}</span>
+                </li>
+            </ol>
+        </div>
     </div>
-  </div>
 </template>
 <style scoped>
 .heading {
-  background-color: #f0f7fe;
-  margin-top: 30px;
-  margin-left: 0px;
-  margin-right: 0px;
-  font-size: 24px;
-  font-weight: normal;
-  text-align: center;
+    background-color: #f0f7fe;
+    margin-top: 30px;
+    margin-left: 0px;
+    margin-right: 0px;
+    font-size: 24px;
+    font-weight: normal;
+    text-align: center;
 }
 
 div {
-    background-color: #DAEAFB;
+    background-color: #daeafb;
 }
 
 .a {
-  border: 0px solid #daeafb;
-  margin-top: 2em;
+    border: 0px solid #daeafb;
+    margin-top: 2em;
 }
 
 li {
-  display: flex;
-  justify-content: space-between;
-  padding-right: 2em;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 2em;
 }
 </style>
 
@@ -43,14 +43,14 @@ export default {
     name: 'TopTenBoard',
     props: {
         apiCall: {
-            type:String
+            type: String,
         },
-        heading:{
-            type: String
+        heading: {
+            type: String,
         },
-        unit:{
-            type: String
-        }
+        unit: {
+            type: String,
+        },
     },
     data() {
         return {
@@ -64,7 +64,7 @@ export default {
                 { headers: { Accept: 'application/json' } }
             )
             const json = await resp.json()
-            
+
             for (const station of json.station) {
                 if (station.value != null) {
                     let topListContender = {
@@ -77,14 +77,9 @@ export default {
                 this.topList.sort(this.sortValue)
                 this.topList.length = 10
             }
-                    
         },
         sortValue(a, b) {
-            return a.value > b.value
-                ? -1
-                : b.value > a.value
-                ? 1
-                : 0
+            return a.value > b.value ? -1 : b.value > a.value ? 1 : 0
         },
     },
     created() {
