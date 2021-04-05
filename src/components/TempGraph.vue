@@ -58,7 +58,7 @@ export default {
   methods: {
     async fetchTempsFromCoordinates() {
       const response = await fetch(
-        `https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/16/lat/58/data.json`,
+        `https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/11.97/lat/57.7/data.json`,
         { headers: { Accept: "application/json" } }
       );
       const json = await response.json();
