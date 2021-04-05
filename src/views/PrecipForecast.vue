@@ -63,41 +63,51 @@ export default {
 </script>
 
 <style scoped>
-div {
-    border: 1px solid black;
+@media screen and (max-width: 767px){
+    .breadtext {
+        display: none;
+    }
+    nav {
+        display: none;
+    }    
 }
-.main-precipforecast {
-    display: grid;
-    width: 100%;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 7fr;
-}
-.innertop {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-}
-nav {
-    margin-right: 57%;
-    margin-top: 1.5em;
-}
-.find-location {
-    padding-top: 1.5em;
-}
+@media screen and (min-width: 768px) {
+    div {
+        border: 1px solid black;
+    }
+    .main-precipforecast {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 7fr;
+    }
+    .innertop {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    nav {
+        margin-right: 57%;
+        margin-top: 1.5em;
+    }
+    .find-location {
+        padding-top: 1.5em;
+    }
 
-.innerbottom {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-}
-.info {
-    width: 30%;
-    background-color: #daeafb;
-}
-.graphcontent {
-    width: 70%;
-}
-p {
-    padding: 0.25em;
+    .innerbottom {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    .info {
+        width: 30%;
+        background-color: #daeafb;
+    }
+    .graphcontent {
+        width: 70%;
+    }
+    p {
+        padding: 0.25em;
+    }
 }
 </style>

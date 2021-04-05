@@ -1,7 +1,11 @@
 <template>
     <div class="main-day-select">
         <div class="day">
-            <input type="button" :value="dayDate" @click="selectDay" />
+            <input
+                type="button"
+                :value="dayDate"
+                @click="selectDay"
+            />
         </div>
     </div>
 </template>
@@ -18,8 +22,10 @@ input {
 import { format } from 'date-fns'
 import { sv } from 'date-fns/locale'
 import { addDays } from 'date-fns'
+
 export default {
     name: 'DaySelect',
+
     props: {
         dayNumber: {
             type: Number,
@@ -30,6 +36,18 @@ export default {
         dayFormat: {
             type: String,
         },
+        choseI: {
+            type: Number,
+        },
+        choseLimit: {
+            type: Number,
+        },
+        precipListValues: {
+            type: Array,
+        },
+        precipListTimes: {
+            type: Array,
+        },
     },
 
     data() {
@@ -39,7 +57,27 @@ export default {
                 `'${this.buttonText} '${this.dayFormat}`,
                 { locale: sv }
             ),
+            chosenDayValues: [],
+            chosenDayTimes: [],
         }
+    },
+    methods: {
+        selectDay() {
+            for (let i = `${this.choseI}`; i <= `${this.choseLimit}`; i++) {
+                let a = `${this.precipListValues[i]}`
+                let b = `${this.precipListTimes[i]}`
+                this.chosenDayValues.push(a)
+                this.chosenDayTimes.push(b)
+            }
+            //console.log(this.chosenDayValues)
+            //console.log(this.chosenDayTimes)
+            this.selectedValues = String(this.chosenDayValues)
+            this.selcetedTimes = String(this.chosenDayTimes)
+            this.$emit('selected-values', this.chosenDayValues, this.chosenDayTimes)
+            this.chosenDayValues = []
+            this.chosenDayTimes = []
+        },
     },
 }
 </script>
+

@@ -6,6 +6,12 @@
                     :dayNumber="0"
                     buttonText="Idag"
                     dayFormat="eee d/M"
+                    :choseI="0"
+                    :choseLimit="23"
+                    :precipListValues="precipListValues"
+                    :precipListTimes="precipListTimes"
+                    @selected-values="displayGraph"
+                    
                 ></day-select>
             </div>
             <div class="inner">
@@ -13,6 +19,11 @@
                     :dayNumber="1"
                     buttonText="Imorgon"
                     dayFormat="eee d/M"
+                    :choseI="24"
+                    :choseLimit="44"
+                    :precipListValues="precipListValues"
+                    :precipListTimes="precipListTimes"
+                    @selected-values="displayGraph"
                 ></day-select>
             </div>
             <div class="inner">
@@ -20,6 +31,11 @@
                     :dayNumber="2"
                     buttonText=""
                     dayFormat="eeee d/M"
+                    :choseI="45"
+                    :choseLimit="49"
+                    :precipListValues="precipListValues"
+                    :precipListTimes="precipListTimes"
+                    @selected-values="displayGraph"
                 ></day-select>
             </div>
             <div class="inner">
@@ -27,6 +43,11 @@
                     :dayNumber="3"
                     buttonText=""
                     dayFormat="eeee d/M"
+                    :choseI="50"
+                    :choseLimit="54"
+                    :precipListValues="precipListValues"
+                    :precipListTimes="precipListTimes"
+                    @selected-values="displayGraph"
                 ></day-select>
             </div>
             <div class="inner">
@@ -34,6 +55,11 @@
                     :dayNumber="4"
                     buttonText=""
                     dayFormat="eeee d/M"
+                    :choseI="55"
+                    :choseLimit="59"
+                    :precipListValues="precipListValues"
+                    :precipListTimes="precipListTimes"
+                    @selected-values="displayGraph"
                 ></day-select>
             </div>
             <div class="inner">
@@ -41,6 +67,11 @@
                     :dayNumber="5"
                     buttonText=""
                     dayFormat="eeee d/M"
+                    :choseI="60"
+                    :choseLimit="62"
+                    :precipListValues="precipListValues"
+                    :precipListTimes="precipListTimes"
+                    @selected-values="displayGraph"
                 ></day-select>
             </div>
             <div class="inner">
@@ -48,6 +79,11 @@
                     :dayNumber="6"
                     buttonText=""
                     dayFormat="eeee d/M"
+                    :choseI="63"
+                    :choseLimit="65"
+                    :precipListValues="precipListValues"
+                    :precipListTimes="precipListTimes"
+                    @selected-values="displayGraph"
                 ></day-select>
             </div>
         </div>
@@ -58,7 +94,8 @@
                 height="400"
                 :options="chartOptions"
                 :series="series"
-            ></apexchart>
+            >
+            </apexchart>
         </div>
     </div>
 </template>
@@ -129,21 +166,18 @@ export default {
                 this.precipListValues.push(precip)
                 this.precipListTimes.push(hourlyData.validTime)
             }
-
-            //this.precipListValues.length = 24
-            //let dayOne = this.precipListValues[0-23]
-            this.precipListTimes.length = 24
+            console.log(this.precipListTimes)
             this.displayGraph()
         },
-        displayGraph() {
+        displayGraph(chosenDayValues = [], chosenDayTimes = []) {
             this.series = [
                 {
                     name: 'Nederbörd (mm)',
-                    data: this.precipListValues,
+                    data: chosenDayValues,
                 },
             ]
             this.chartOptions.xaxis.categories.length = 0
-            for (let val of this.precipListTimes) {
+            for (let val of chosenDayTimes) {
                 let formattedDate = format(new Date(val), 'HH')
                 this.chartOptions.xaxis.categories.push(formattedDate)
             }
@@ -161,3 +195,4 @@ export default {
     },
 }
 </script>
+
