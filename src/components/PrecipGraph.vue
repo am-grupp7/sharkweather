@@ -2,25 +2,61 @@
     <div>
         <div class="dayselector">
             <div class="inner">
-                <day-select :dayNumber=0 buttonText=Idag dayFormat='eee d/M'></day-select>
+                <day-select
+                    :dayNumber="0"
+                    buttonText="Idag"
+                    dayFormat="eee d/M"
+                    :choseI="0"
+                    :choseLimit="23"
+                    :precipListValues="precipListValues"
+                    :precipListTimes="precipListTimes"
+                ></day-select>
             </div>
             <div class="inner">
-                <day-select :dayNumber=1 buttonText=Imorgon dayFormat='eee d/M'></day-select>
+                <day-select
+                    :dayNumber="1"
+                    buttonText="Imorgon"
+                    dayFormat="eee d/M"
+                    :choseI="24"
+                    :choseLimit="47"
+                    :precipListValues="precipListValues"
+                    :precipListTimes="precipListTimes"
+                ></day-select>
             </div>
             <div class="inner">
-                <day-select :dayNumber=2 buttonText="" dayFormat='eeee d/M'></day-select>
+                <day-select
+                    :dayNumber="2"
+                    buttonText=""
+                    dayFormat="eeee d/M"
+                ></day-select>
             </div>
             <div class="inner">
-                <day-select :dayNumber=3 buttonText="" dayFormat='eeee d/M'></day-select>
+                <day-select
+                    :dayNumber="3"
+                    buttonText=""
+                    dayFormat="eeee d/M"
+                ></day-select>
             </div>
             <div class="inner">
-                <day-select :dayNumber=4 buttonText="" dayFormat='eeee d/M'></day-select>
+                <day-select
+                    :dayNumber="4"
+                    buttonText=""
+                    dayFormat="eeee d/M"
+                ></day-select>
             </div>
             <div class="inner">
-                <day-select :dayNumber=5 buttonText="" dayFormat='eeee d/M'></day-select>
+                <day-select
+                    :dayNumber="5"
+                    buttonText=""
+                    dayFormat="eeee d/M"
+                ></day-select>
             </div>
             <div class="inner">
-                <day-select :dayNumber=6 buttonText="" dayFormat='eeee d/M'></day-select>
+                <day-select
+                    :dayNumber="6"
+                    buttonText=""
+                    dayFormat="eeee d/M"
+                ></day-select>
             </div>
         </div>
         <div class="city">Göteborg</div>
@@ -30,21 +66,20 @@
                 height="400"
                 :options="chartOptions"
                 :series="series"
-            ></apexchart>
+            >
+            </apexchart>
         </div>
     </div>
 </template>
 <style scoped>
 .dayselector {
-        display: flex;
-        flex-direction: row;
-        padding: 1%;
-                
-    }
+    display: flex;
+    flex-direction: row;
+    padding: 1%;
+}
 .inner {
-    margin: 5px;    
-    }
-
+    margin: 5px;
+}
 </style>
 
 <script>
@@ -52,6 +87,15 @@ import { format } from 'date-fns'
 import DaySelect from '../components/DaySelect.vue'
 export default {
     name: 'PrecipGraph',
+    //emits: ['allValues', 'allTimes'],
+    /*props: {
+        chosenDayValues: {
+            type: Array
+        },
+        chosenDayTimes: {
+            type: Array
+        },
+    },*/
     components: {
         DaySelect,
     },
@@ -103,33 +147,23 @@ export default {
                 this.precipListValues.push(precip)
                 this.precipListTimes.push(hourlyData.validTime)
             }
+            //this.allValues = String(this.precipListValues)
+            //this.allTimes = String(this.precipListTimes)
+            //this.$emit('allValues', this.precipListValues)
+            //this.$emit('allTimes', this.precipListTimes)
 
-            this.precipListValues.length = 24
-            //let dayOne = this.precipListValues[0-23]
-            /*
-             *Lopa genom precipListValues och plocka ut rätt antal värden..
-             * någon funtion {
-             * let dayOneList = [] (ev i return?)
-             * let a
-             * for(i = 0; i <= 23; i++) {
-             *      a = this.precipListValues[i]
-             *      this.dayOneList.push(a)
-                   }
-             * }
-             *Plocka ut alla värden ur listan på något vis? 
-             */
-            this.precipListTimes.length = 24
-            this.displayGraph()
+            //this.displayGraph()
+            //this.selectDay()
         },
         displayGraph() {
             this.series = [
                 {
                     name: 'Nederbörd (mm)',
-                    data: this.precipListValues,
+                    data: this.chosenDayValues,
                 },
             ]
             this.chartOptions.xaxis.categories.length = 0
-            for (let val of this.precipListTimes) {
+            for (let val of this.chosenDayTimes) {
                 let formattedDate = format(new Date(val), 'HH')
                 this.chartOptions.xaxis.categories.push(formattedDate)
             }
@@ -140,7 +174,7 @@ export default {
                     return param.values[0]
                 }
             }
-        },
+        },        
     },
     created() {
         this.fetchPrecipListValue()

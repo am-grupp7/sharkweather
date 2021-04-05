@@ -18,24 +18,62 @@ input {
 import { format } from 'date-fns'
 import { sv } from 'date-fns/locale'
 import { addDays } from 'date-fns'
+
 export default {
     name: 'DaySelect',
+    emits: ['selectedValues', 'selcetedTimes'],
+
     props: {
         dayNumber: {
-            type: Number
+            type: Number,
         },
         buttonText: {
-            type: String
+            type: String,
         },
         dayFormat: {
-            type: String
+            type: String,
+        },
+        choseI: {
+            type: Number,
+        },
+        choseLimit: {
+            type: Number
+        },
+        precipListValues: {
+            type: Array
+        },
+        precipListTimes: {
+            type: Array
         },
     },
 
     data() {
         return {
-            dayDate: format(addDays(new Date(), `${this.dayNumber}`), `'${this.buttonText} '${this.dayFormat}`, {locale: sv,}),
+            dayDate: format(
+                addDays(new Date(), `${this.dayNumber}`),
+                `'${this.buttonText} '${this.dayFormat}`,
+                { locale: sv }
+            ),
+            chosenDayValues: [],
+            chosenDayTimes: [],
         }
+    },
+    methods: {
+        selectDay() {
+            
+        for (let i = `${this.choseI}`; i <= `${this.choseLimit}`; i++) {
+                let a = `${this.precipListValues[i]}`
+                let b = `${this.precipListTimes[i]}`
+                this.chosenDayValues.push(a)
+                this.chosenDayTimes.push(b)
+            }
+            console.log(this.chosenDayValues)
+            console.log(this.chosenDayTimes)
+            this.selectedValues = String(this.chosenDayValues)
+            this.selcetedTimes = String(this.chosenDayTimes)
+            this.$emit('selectedValues', this.chosenDayValues)
+            this.$emit('selcetedTimes', this.chosenDayTimes)
+        },
     },
 }
 </script>

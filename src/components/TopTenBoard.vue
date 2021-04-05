@@ -43,7 +43,7 @@ export default {
     name: 'TopTenBoard',
     props: {
         apiCall: {
-        type:String
+            type:String
         },
         heading:{
             type: String
