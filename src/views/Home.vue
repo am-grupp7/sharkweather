@@ -18,14 +18,16 @@
                 <div class="find-location">
                     <div class="serchbar">
                         <input
+                            id="serch"
                             type="text"
                             name="serch-location"
-                            placeholder="Sök efter en plats"
+                            placeholder="     Sök efter en plats"
                         />
                     </div>
                     <p>eller...</p>
                     <div class="your-location">
                         <input
+
                             type="button"
                             value="Använd din nuvarande plats"
                         />
@@ -34,7 +36,8 @@
             </div>
             <div class="inner">
                 <div class="umbrella">
-                    <img alt="Vue logo" src="../assets/icons/Regn.svg" />
+                    <img id="umbrella" alt="Umbrella" src="../assets/icons/Regn.svg" width="50" height="50" />
+                    <h2>Paraply?</h2>
                 </div>
             </div>
         </div>
@@ -52,17 +55,32 @@ export default {
 <style scoped>
 .home {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 30% 40% 30%;
+    grid-template-columns: 100%;
+    grid-template-rows: 50% 50%;
 }
 .wilkommen {
     background-color: #daeafb;
 }
 .find-location {
     background-color: #daeafb;
+    padding: 3em;
 }
 .lower-row {
     display: flex;
     flex-direction: row;
+    width: auto;
+}
+#serch {
+    background: url(../assets/icons/Sök.svg) no-repeat scroll 1px 1px;
+    background-size: 9%;
+    background-color: white;
+    
+}
+.umbrella {
+    display: flex;
+    padding: 1em;
+}
+#umbrella {
+    margin-right: 1em;
 }
 </style>
