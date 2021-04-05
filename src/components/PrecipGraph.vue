@@ -2,25 +2,53 @@
     <div>
         <div class="dayselector">
             <div class="inner">
-                <day-select :dayNumber=0 buttonText=Idag dayFormat='eee d/M'></day-select>
+                <day-select
+                    :dayNumber="0"
+                    buttonText="Idag"
+                    dayFormat="eee d/M"
+                ></day-select>
             </div>
             <div class="inner">
-                <day-select :dayNumber=1 buttonText=Imorgon dayFormat='eee d/M'></day-select>
+                <day-select
+                    :dayNumber="1"
+                    buttonText="Imorgon"
+                    dayFormat="eee d/M"
+                ></day-select>
             </div>
             <div class="inner">
-                <day-select :dayNumber=2 buttonText="" dayFormat='eeee d/M'></day-select>
+                <day-select
+                    :dayNumber="2"
+                    buttonText=""
+                    dayFormat="eeee d/M"
+                ></day-select>
             </div>
             <div class="inner">
-                <day-select :dayNumber=3 buttonText="" dayFormat='eeee d/M'></day-select>
+                <day-select
+                    :dayNumber="3"
+                    buttonText=""
+                    dayFormat="eeee d/M"
+                ></day-select>
             </div>
             <div class="inner">
-                <day-select :dayNumber=4 buttonText="" dayFormat='eeee d/M'></day-select>
+                <day-select
+                    :dayNumber="4"
+                    buttonText=""
+                    dayFormat="eeee d/M"
+                ></day-select>
             </div>
             <div class="inner">
-                <day-select :dayNumber=5 buttonText="" dayFormat='eeee d/M'></day-select>
+                <day-select
+                    :dayNumber="5"
+                    buttonText=""
+                    dayFormat="eeee d/M"
+                ></day-select>
             </div>
             <div class="inner">
-                <day-select :dayNumber=6 buttonText="" dayFormat='eeee d/M'></day-select>
+                <day-select
+                    :dayNumber="6"
+                    buttonText=""
+                    dayFormat="eeee d/M"
+                ></day-select>
             </div>
         </div>
         <div class="city">Göteborg</div>
@@ -36,15 +64,13 @@
 </template>
 <style scoped>
 .dayselector {
-        display: flex;
-        flex-direction: row;
-        padding: 1%;
-                
-    }
+    display: flex;
+    flex-direction: row;
+    padding: 1%;
+}
 .inner {
-    margin: 5px;    
-    }
-
+    margin: 5px;
+}
 </style>
 
 <script>
@@ -135,4 +161,3 @@ export default {
     },
 }
 </script>
-

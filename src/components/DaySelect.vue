@@ -22,21 +22,24 @@ export default {
     name: 'DaySelect',
     props: {
         dayNumber: {
-            type: Number
+            type: Number,
         },
         buttonText: {
-            type: String
+            type: String,
         },
         dayFormat: {
-            type: String
+            type: String,
         },
     },
 
     data() {
         return {
-            dayDate: format(addDays(new Date(), `${this.dayNumber}`), `'${this.buttonText} '${this.dayFormat}`, {locale: sv,}),
+            dayDate: format(
+                addDays(new Date(), `${this.dayNumber}`),
+                `'${this.buttonText} '${this.dayFormat}`,
+                { locale: sv }
+            ),
         }
     },
 }
 </script>
-
