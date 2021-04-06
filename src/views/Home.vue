@@ -95,12 +95,27 @@ export default {
 .wilkommen {
     background-color: #daeafb;
 }
+
+h3 {
+    text-align: left;
+    margin-left: 1em;
+}
+
 .find-location {
     background-color: #daeafb;
     padding: 3em;
 }
+
+.top-inner {
+    background-color: #daeafb;
+    size: 10%;
+    font-family: 'Tahoma';
+}
+
 .inner1 {
-    padding: 10em;
+    margin-left: 5em;
+    margin-right: 5em;
+    padding: 2em;
 }
 .lower-row {
     display: flex;
