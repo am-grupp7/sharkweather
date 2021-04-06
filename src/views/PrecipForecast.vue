@@ -63,13 +63,13 @@ export default {
 </script>
 
 <style scoped>
-@media screen and (max-width: 767px){
+@media screen and (max-width: 767px) {
     .breadtext {
         display: none;
     }
     nav {
         display: none;
-    }    
+    }
 }
 @media screen and (min-width: 768px) {
     div {

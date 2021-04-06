@@ -1,11 +1,7 @@
 <template>
     <div class="main-day-select">
         <div class="day">
-            <input
-                type="button"
-                :value="dayDate"
-                @click="selectDay"
-            />
+            <input type="button" :value="dayDate" @click="selectDay" />
         </div>
     </div>
 </template>
@@ -73,11 +69,14 @@ export default {
             //console.log(this.chosenDayTimes)
             this.selectedValues = String(this.chosenDayValues)
             this.selcetedTimes = String(this.chosenDayTimes)
-            this.$emit('selected-values', this.chosenDayValues, this.chosenDayTimes)
+            this.$emit(
+                'selected-values',
+                this.chosenDayValues,
+                this.chosenDayTimes
+            )
             this.chosenDayValues = []
             this.chosenDayTimes = []
         },
     },
 }
 </script>
-

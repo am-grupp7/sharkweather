@@ -11,7 +11,6 @@
                     :precipListValues="precipListValues"
                     :precipListTimes="precipListTimes"
                     @selected-values="displayGraph"
-                    
                 ></day-select>
             </div>
             <div class="inner">
@@ -195,4 +194,3 @@ export default {
     },
 }
 </script>
-
