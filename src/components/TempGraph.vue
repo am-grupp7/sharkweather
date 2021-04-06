@@ -13,6 +13,78 @@
                     @selected-values="displayGraph"
                 ></day-select>
             </div>
+            <div class="inner">
+                <day-select
+                    :dayNumber="1"
+                    buttonText="Imorgon"
+                    dayFormat="eee d/M"
+                    :choseI="24"
+                    :choseLimit="44"
+                    :listValues="tempListValues"
+                    :listTimes="tempListTimes"
+                    @selected-values="displayGraph"
+                ></day-select>
+            </div>
+            <div class="inner">
+                <day-select
+                    :dayNumber="2"
+                    buttonText=""
+                    dayFormat="eeee d/M"
+                    :choseI="45"
+                    :choseLimit="49"
+                    :listValues="tempListValues"
+                    :listTimes="tempListTimes"
+                    @selected-values="displayGraph"
+                ></day-select>
+            </div>
+            <div class="inner">
+                <day-select
+                    :dayNumber="3"
+                    buttonText=""
+                    dayFormat="eeee d/M"
+                    :choseI="50"
+                    :choseLimit="54"
+                    :listValues="tempListValues"
+                    :listTimes="tempListTimes"
+                    @selected-values="displayGraph"
+                ></day-select>
+            </div>
+            <div class="inner">
+                <day-select
+                    :dayNumber="4"
+                    buttonText=""
+                    dayFormat="eeee d/M"
+                    :choseI="55"
+                    :choseLimit="59"
+                    :listValues="tempListValues"
+                    :listTimes="tempListTimes"
+                    @selected-values="displayGraph"
+                ></day-select>
+            </div>
+            <div class="inner">
+                <day-select
+                    :dayNumber="5"
+                    buttonText=""
+                    dayFormat="eeee d/M"
+                    :choseI="60"
+                    :choseLimit="62"
+                    :listValues="tempListValues"
+                    :listTimes="tempListTimes"
+                    @selected-values="displayGraph"
+                ></day-select>
+            </div>
+            <div class="inner">
+                <day-select
+                    :dayNumber="6"
+                    buttonText=""
+                    dayFormat="eeee d/M"
+                    :choseI="63"
+                    :choseLimit="65"
+                    :listValues="tempListValues"
+                    :listTimes="tempListTimes"
+                    @selected-values="displayGraph"
+                ></day-select>
+            </div>
         </div>
         <div class="city">Göteborg</div>
         <div class="chart">
@@ -26,7 +98,16 @@
     </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.dayselector {
+    display: flex;
+    flex-direction: row;
+    padding: 1%;
+}
+.inner {
+    margin: 5px;
+}
+</style>
 
 <script>
 //import ApexCharts from "apexcharts";
