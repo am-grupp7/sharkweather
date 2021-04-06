@@ -165,7 +165,7 @@ export default {
                 this.precipListValues.push(precip)
                 this.precipListTimes.push(hourlyData.validTime)
             }
-            console.log(this.precipListTimes)
+
             this.displayGraph()
         },
         displayGraph(chosenDayValues = [], chosenDayTimes = []) {
