@@ -42,10 +42,10 @@ export default {
         choseLimit: {
             type: Number,
         },
-        precipListValues: {
+        listValues: {
             type: Array,
         },
-        precipListTimes: {
+        listTimes: {
             type: Array,
         },
     },
@@ -64,8 +64,8 @@ export default {
     methods: {
         selectDay() {
             for (let i = `${this.choseI}`; i <= `${this.choseLimit}`; i++) {
-                let a = `${this.precipListValues[i]}`
-                let b = `${this.precipListTimes[i]}`
+                let a = `${this.listValues[i]}`
+                let b = `${this.listTimes[i]}`
                 this.chosenDayValues.push(a)
                 this.chosenDayTimes.push(b)
             }

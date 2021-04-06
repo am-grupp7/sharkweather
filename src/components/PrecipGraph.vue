@@ -8,8 +8,8 @@
                     dayFormat="eee d/M"
                     :choseI="0"
                     :choseLimit="23"
-                    :precipListValues="precipListValues"
-                    :precipListTimes="precipListTimes"
+                    :listValues="precipListValues"
+                    :listTimes="precipListTimes"
                     @selected-values="displayGraph"
                     
                 ></day-select>
@@ -21,8 +21,8 @@
                     dayFormat="eee d/M"
                     :choseI="24"
                     :choseLimit="44"
-                    :precipListValues="precipListValues"
-                    :precipListTimes="precipListTimes"
+                    :listValues="precipListValues"
+                    :listTimes="precipListTimes"
                     @selected-values="displayGraph"
                 ></day-select>
             </div>
@@ -33,8 +33,8 @@
                     dayFormat="eeee d/M"
                     :choseI="45"
                     :choseLimit="49"
-                    :precipListValues="precipListValues"
-                    :precipListTimes="precipListTimes"
+                    :listValues="precipListValues"
+                    :listTimes="precipListTimes"
                     @selected-values="displayGraph"
                 ></day-select>
             </div>
@@ -45,8 +45,8 @@
                     dayFormat="eeee d/M"
                     :choseI="50"
                     :choseLimit="54"
-                    :precipListValues="precipListValues"
-                    :precipListTimes="precipListTimes"
+                    :listValues="precipListValues"
+                    :listTimes="precipListTimes"
                     @selected-values="displayGraph"
                 ></day-select>
             </div>
@@ -57,8 +57,8 @@
                     dayFormat="eeee d/M"
                     :choseI="55"
                     :choseLimit="59"
-                    :precipListValues="precipListValues"
-                    :precipListTimes="precipListTimes"
+                    :listValues="precipListValues"
+                    :listTimes="precipListTimes"
                     @selected-values="displayGraph"
                 ></day-select>
             </div>
@@ -69,8 +69,8 @@
                     dayFormat="eeee d/M"
                     :choseI="60"
                     :choseLimit="62"
-                    :precipListValues="precipListValues"
-                    :precipListTimes="precipListTimes"
+                    :listValues="precipListValues"
+                    :listTimes="precipListTimes"
                     @selected-values="displayGraph"
                 ></day-select>
             </div>
@@ -81,8 +81,8 @@
                     dayFormat="eeee d/M"
                     :choseI="63"
                     :choseLimit="65"
-                    :precipListValues="precipListValues"
-                    :precipListTimes="precipListTimes"
+                    :listValues="precipListValues"
+                    :listTimes="precipListTimes"
                     @selected-values="displayGraph"
                 ></day-select>
             </div>
