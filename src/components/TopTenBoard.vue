@@ -134,7 +134,7 @@ export default {
         },
         length: {
             type: Number,
-        }
+        },
     },
     data() {
         return {
