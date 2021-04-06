@@ -17,10 +17,27 @@ const routes = [
             import(/* webpackChunkName: "about" */ '../views/About.vue'),
     },
     {
-        path: '/topten', 
+        path: '/topten',
         name: 'TopTen',
         component: () =>
-            import(/* webpackChunkName: "about" */ '../views/TopTen.vue'),
+            import(/* webpackChunkName: "topten" */ '../views/TopTen.vue'),
+    },
+    {
+        path: '/tempforecast',
+        name: 'TempForecast',
+        component: () =>
+            import(
+                /*webpackChunkName: "tempforecast" */ '../views/TempForecast.vue'
+            ),
+    },
+
+    {
+        path: '/precipforecast',
+        name: 'PrecipForecast',
+        component: () =>
+            import(
+                /* webpackChunkName: "about" */ '../views/PrecipForecast.vue'
+            ),
     },
 ]
 
