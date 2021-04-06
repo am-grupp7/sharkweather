@@ -7,14 +7,12 @@
         </div>
         <div class="innerbottom">
             <div class="infobox">
-                <div class="headline">
-                    <h2>Temperatur</h2>
+                <div class="header">
+                    <h3>Temperaturer</h3>
                     <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Placeat quae quo reiciendis quas aspernatur at,
-                        eligendi ipsum, delectus fugit, odit earum? Vero nulla
-                        tenetur vitae praesentium expedita odit recusandae
-                        quasi.
+                        Här finns prognoser för temperaturer. <br />
+                        Välj en plats och dag som du vill se prognosen för.
+                        Prognoserna kommer från SHMIs öppna api.
                     </p>
                 </div>
 
