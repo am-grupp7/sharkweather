@@ -6,12 +6,9 @@
                     :dayNumber="0"
                     buttonText="Idag"
                     dayFormat="eee d/M"
-                    :choseI="0"
-                    :choseLimit="23"
                     :listValues="precipListValues"
                     :listTimes="precipListTimes"
                     @selected-values="displayGraph"
-                    
                 ></day-select>
             </div>
             <div class="inner">
@@ -19,8 +16,6 @@
                     :dayNumber="1"
                     buttonText="Imorgon"
                     dayFormat="eee d/M"
-                    :choseI="24"
-                    :choseLimit="44"
                     :listValues="precipListValues"
                     :listTimes="precipListTimes"
                     @selected-values="displayGraph"
@@ -31,8 +26,6 @@
                     :dayNumber="2"
                     buttonText=""
                     dayFormat="eeee d/M"
-                    :choseI="45"
-                    :choseLimit="49"
                     :listValues="precipListValues"
                     :listTimes="precipListTimes"
                     @selected-values="displayGraph"
@@ -43,8 +36,6 @@
                     :dayNumber="3"
                     buttonText=""
                     dayFormat="eeee d/M"
-                    :choseI="50"
-                    :choseLimit="54"
                     :listValues="precipListValues"
                     :listTimes="precipListTimes"
                     @selected-values="displayGraph"
@@ -55,8 +46,6 @@
                     :dayNumber="4"
                     buttonText=""
                     dayFormat="eeee d/M"
-                    :choseI="55"
-                    :choseLimit="59"
                     :listValues="precipListValues"
                     :listTimes="precipListTimes"
                     @selected-values="displayGraph"
@@ -67,8 +56,6 @@
                     :dayNumber="5"
                     buttonText=""
                     dayFormat="eeee d/M"
-                    :choseI="60"
-                    :choseLimit="62"
                     :listValues="precipListValues"
                     :listTimes="precipListTimes"
                     @selected-values="displayGraph"
@@ -79,8 +66,6 @@
                     :dayNumber="6"
                     buttonText=""
                     dayFormat="eeee d/M"
-                    :choseI="63"
-                    :choseLimit="65"
                     :listValues="precipListValues"
                     :listTimes="precipListTimes"
                     @selected-values="displayGraph"
@@ -166,7 +151,7 @@ export default {
                 this.precipListValues.push(precip)
                 this.precipListTimes.push(hourlyData.validTime)
             }
-            console.log(this.precipListTimes)
+
             this.displayGraph()
         },
         displayGraph(chosenDayValues = [], chosenDayTimes = []) {
@@ -195,4 +180,3 @@ export default {
     },
 }
 </script>
-

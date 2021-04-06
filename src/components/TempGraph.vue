@@ -117,7 +117,7 @@ import DaySelect from '../components/DaySelect.vue'
 export default {
     name: 'TempGraph',
     components: {
-      DaySelect,
+        DaySelect,
     },
     props: {},
     data() {
@@ -166,7 +166,7 @@ export default {
                 this.tempListValues.push(temp)
                 this.tempListTimes.push(hourlyData.validTime)
             }
-            
+
             this.displayGraph()
         },
         displayGraph(chosenDayValues = [], chosenDayTimes = []) {
