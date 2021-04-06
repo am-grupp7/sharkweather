@@ -16,6 +16,7 @@
                         count="1"
                         plus="+"
                         unit="°c"
+                        :length="10"
                     ></top-ten-board>
                 </div>
                 <div class="inner">
@@ -24,6 +25,7 @@
                         heading="Nederbörd"
                         count="1"
                         unit="mm"
+                        :length="10"
                     ></top-ten-board>
                 </div>
                 <div class="inner">
@@ -32,6 +34,7 @@
                         heading="Vindstyrka"
                         count="1"
                         unit="m/s"
+                        :length="10"
                     ></top-ten-board>
                 </div>
             </div>
@@ -86,6 +89,7 @@
                         count="1"
                         plus="+"
                         unit="°c"
+                        :length="10"
                     ></top-ten-board>
                 </div>
                 <div class="panel" id="regn-panel">
@@ -94,6 +98,7 @@
                         heading="Nederbörd"
                         count="1"
                         unit="mm"
+                        :length="10"
                     ></top-ten-board>
                 </div>
                 <div class="panel" id="vind-panel">
@@ -102,6 +107,7 @@
                         heading="Vindstyrka"
                         count="1"
                         unit="m/s"
+                        :length="10"
                     ></top-ten-board>
                 </div>
             </div>

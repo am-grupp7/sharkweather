@@ -132,6 +132,9 @@ export default {
         unit: {
             type: String,
         },
+        length: {
+            type: Number,
+        }
     },
     data() {
         return {
@@ -156,7 +159,7 @@ export default {
                     this.topList.push(topListContender)
                 }
                 this.topList.sort(this.sortValue)
-                this.topList.length = 10
+                this.topList.length = `${this.length}`
             }
 
             let i = 0
