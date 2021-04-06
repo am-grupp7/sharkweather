@@ -97,7 +97,7 @@ export default {
 }
 .find-location {
     background-color: #daeafb;
-    padding: 3em;
+    padding: 4em;
 }
 .lower-row {
     display: flex;
