@@ -13,6 +13,7 @@
                     api-call="1"
                     heading="Temperatur °c"
                     unit="°c"
+                    :length="10"
                 ></top-ten-board>
             </div>
             <div class="inner">
@@ -20,6 +21,7 @@
                     api-call="7"
                     heading="Nederbörd mm"
                     unit="mm"
+                    :length="10"
                 ></top-ten-board>
             </div>
             <div class="inner">
@@ -27,6 +29,7 @@
                     api-call="4"
                     heading="Vindstyrka m/s"
                     unit="m/s"
+                    :length="10"
                 ></top-ten-board>
             </div>
         </div>

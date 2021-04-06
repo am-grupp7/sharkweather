@@ -12,7 +12,32 @@
         <div class="lower-row">
             <div class="inner">
                 <h3>Dagens topp 3</h3>
-                <div class="top-tre"></div>
+                <div class="top-tre">
+                    <div class="top-inner">
+                        <top-ten-board
+                            api-call="1"
+                            heading="Temperatur °c"
+                            unit="°c"
+                            :length="3"
+                        ></top-ten-board>
+                    </div>
+                    <div class="top-inner">
+                        <top-ten-board
+                            api-call="7"
+                            heading="Nederbörd mm"
+                            unit="mm"
+                            :length="3"
+                        ></top-ten-board>
+                    </div>
+                    <div class="top-inner">
+                        <top-ten-board
+                            api-call="4"
+                            heading="Vindstyrka m/s"
+                            unit="m/s"
+                            :length="3"
+                        ></top-ten-board>
+                    </div>
+                </div>
             </div>
             <div class="inner">
                 <div class="find-location">
@@ -27,7 +52,6 @@
                     <p>eller...</p>
                     <div class="your-location">
                         <input
-
                             type="button"
                             value="Använd din nuvarande plats"
                         />
@@ -36,7 +60,13 @@
             </div>
             <div class="inner">
                 <div class="umbrella">
-                    <img id="umbrella" alt="Umbrella" src="../assets/icons/Regn.svg" width="50" height="50" />
+                    <img
+                        id="umbrella"
+                        alt="Umbrella"
+                        src="../assets/icons/Regn.svg"
+                        width="50"
+                        height="50"
+                    />
                     <h2>Paraply?</h2>
                 </div>
             </div>
@@ -46,9 +76,13 @@
 
 <script>
 // @ is an alias to /src
+import TopTenBoard from '../components/TopTenBoard.vue'
 
 export default {
     name: 'Home',
+    components: {
+        TopTenBoard,
+    },
 }
 </script>
 
@@ -74,7 +108,6 @@ export default {
     background: url(../assets/icons/Sök.svg) no-repeat scroll 1px 1px;
     background-size: 9%;
     background-color: white;
-    
 }
 .umbrella {
     display: flex;
@@ -82,5 +115,13 @@ export default {
 }
 #umbrella {
     margin-right: 1em;
+}
+
+.top-tre {
+    display: flex;
+    flex-direction: row;
+}
+.top-inner {
+    size: 50%;
 }
 </style>
