@@ -1,38 +1,4 @@
 <template>
-<<<<<<< HEAD
-    <div class="main-topten">
-        <nav>Start > Topp 10-lista</nav>
-        <h1>Topp 10-lista</h1>
-        <p>
-            Se var i landet det är varmast, regnar mest eller är blåsigast just
-            nu.
-        </p>
-        <h2>{{ date }}</h2>
-        <div class="boards">
-            <div class="inner">
-                <top-ten-board
-                    api-call="1"
-                    heading="Temperatur °c"
-                    unit="°c"
-                    :length="10"
-                ></top-ten-board>
-            </div>
-            <div class="inner">
-                <top-ten-board
-                    api-call="7"
-                    heading="Nederbörd mm"
-                    unit="mm"
-                    :length="10"
-                ></top-ten-board>
-            </div>
-            <div class="inner">
-                <top-ten-board
-                    api-call="4"
-                    heading="Vindstyrka m/s"
-                    unit="m/s"
-                    :length="10"
-                ></top-ten-board>
-=======
     <div class="desktop">
         <div class="main-topten">
             <nav>Start > Topp 10-lista</nav>
@@ -50,6 +16,7 @@
                         count="1"
                         plus="+"
                         unit="°c"
+                        :length="10"
                     ></top-ten-board>
                 </div>
                 <div class="inner">
@@ -58,6 +25,7 @@
                         heading="Nederbörd"
                         count="1"
                         unit="mm"
+                        :length="10"
                     ></top-ten-board>
                 </div>
                 <div class="inner">
@@ -66,6 +34,7 @@
                         heading="Vindstyrka"
                         count="1"
                         unit="m/s"
+                        :length="10"
                     ></top-ten-board>
                 </div>
             </div>
@@ -120,6 +89,7 @@
                         count="1"
                         plus="+"
                         unit="°c"
+                        :length="10"
                     ></top-ten-board>
                 </div>
                 <div class="panel" id="regn-panel">
@@ -128,6 +98,7 @@
                         heading="Nederbörd"
                         count="1"
                         unit="mm"
+                        :length="10"
                     ></top-ten-board>
                 </div>
                 <div class="panel" id="vind-panel">
@@ -136,9 +107,9 @@
                         heading="Vindstyrka"
                         count="1"
                         unit="m/s"
+                        :length="10"
                     ></top-ten-board>
                 </div>
->>>>>>> master
             </div>
         </div>
     </div>

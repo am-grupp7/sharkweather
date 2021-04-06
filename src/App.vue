@@ -1,24 +1,13 @@
 <template>
-<<<<<<< HEAD
-  <div>
-    <div id="nav">
-      <router-link to="/">Start</router-link>
-      <router-link to="/TopTen">Topp 10-lista</router-link>
-      <router-link to="/TempForecast">Temperaturprognos</router-link>
-      <router-link to="/PrecipForecast">Nederbördsprognos</router-link>
-      <router-link to="/About">Om oss</router-link>
-=======
     <div>
         <div id="nav">
             <router-link to="/">Start</router-link>
             <router-link to="/TopTen">Topp 10-lista</router-link>
-            <router-link to="/">Soltimmar</router-link>
             <router-link to="/TempForecast">Temperaturprognos</router-link>
             <router-link to="/PrecipForecast">Nederbördsprognos</router-link>
             <router-link to="/About">Om oss</router-link>
         </div>
         <router-view />
->>>>>>> master
     </div>
 </template>
 
