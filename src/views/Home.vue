@@ -39,7 +39,7 @@
                     </div>
                 </div>
             </div>
-            <div class="inner">
+            <div class="inner1">
                 <div class="find-location">
                     <div class="serchbar">
                         <input
@@ -58,7 +58,7 @@
                     </div>
                 </div>
             </div>
-            <div class="inner">
+            <div class="inner2">
                 <div class="umbrella">
                     <img
                         id="umbrella"
@@ -98,6 +98,9 @@ export default {
 .find-location {
     background-color: #daeafb;
     padding: 3em;
+}
+.inner1 {
+    padding: 10em;
 }
 .lower-row {
     display: flex;
