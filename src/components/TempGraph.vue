@@ -11,6 +11,7 @@
                     :listValues="tempListValues"
                     :listTimes="tempListTimes"
                     @selected-values="displayGraph"
+                    @geolocationCoordinates="fetchTempsFromCoordinates"
                 ></day-select>
             </div>
             <div class="inner">
@@ -117,7 +118,7 @@ import DaySelect from '../components/DaySelect.vue'
 export default {
     name: 'TempGraph',
     components: {
-      DaySelect,
+        DaySelect,
     },
     props: {},
     data() {
@@ -154,7 +155,9 @@ export default {
         }
     },
     methods: {
-        async fetchTempsFromCoordinates() {
+        async fetchTempsFromCoordinates(latitude, longitude) {
+            console.log('Latitude', latitude)
+            console.log('Longitude', longitude)
             const response = await fetch(
                 `https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/11.97/lat/57.7/data.json`,
                 { headers: { Accept: 'application/json' } }
@@ -166,7 +169,7 @@ export default {
                 this.tempListValues.push(temp)
                 this.tempListTimes.push(hourlyData.validTime)
             }
-            
+
             this.displayGraph()
         },
         displayGraph(chosenDayValues = [], chosenDayTimes = []) {

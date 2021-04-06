@@ -1,5 +1,48 @@
 <template>
-    <div>
-        <input type="button" value="">
+    <div class="your-location">
+        <input
+            type="button"
+            value="Använd din nuvarande plats"
+            @click="findGeoLocation"
+        />
     </div>
 </template>
+
+<script>
+export default {
+    name: 'FindLocation',
+
+    data() {
+        return {
+            location: null,
+            gettingLocation: false,
+            errorStr: null,
+        }
+    },
+
+    methods: {
+        findGeoLocation() {
+            if (!('geolocation' in navigator)) {
+                console.log('Geolocation is not available')
+                return
+            }
+
+            this.gettingLocation = true
+            navigator.geolocation.getCurrentPosition(
+                (pos) => {
+                    this.gettingLocation = false
+                    this.location = pos
+                    let latitude = this.location.coords.latitude.toFixed(6)
+                    let longitude = this.location.coords.longitude.toFixed(6)
+
+                    this.$emit('geolocationCoordinates', latitude, longitude)
+                },
+                () => {
+                    this.gettingLocation = false
+                    console.log('Error getting your location')
+                }
+            )
+        },
+    },
+}
+</script>
