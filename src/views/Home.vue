@@ -129,34 +129,38 @@
 
         <div class="image-nav">
             <div class="regn">
-                <img
-                    :src="require('../assets//icons/Regn.svg')"
-                    class="images"
-                />
+                <router-link to="/PrecipForecast">
+                    <img
+                        :src="require('../assets//icons/Regn.svg')"
+                        class="images"
+                /></router-link>
 
                 <p>Nederbörds prognos</p>
             </div>
             <div class="sol">
-                <img
-                    :src="require('../assets//icons/Sol.svg')"
-                    class="images"
-                />
+                <router-link to="/TempForecast">
+                    <img
+                        :src="require('../assets//icons/Sol.svg')"
+                        class="images"
+                /></router-link>
 
                 <p>Soltimmar</p>
             </div>
             <div class="lista">
-                <img
-                    :src="require('../assets//icons/Lista.svg')"
-                    class="images"
-                />
+                <router-link to="/TopTen">
+                    <img
+                        :src="require('../assets//icons/Lista.svg')"
+                        class="images"
+                /></router-link>
 
                 <p>Topp 10-lista</p>
             </div>
             <div class="uv">
-                <img
-                    class="images"
-                    :src="require('../assets//icons/About.svg')"
-                />
+                <router-link to="/About">
+                    <img
+                        class="images"
+                        :src="require('../assets//icons/About.svg')"
+                /></router-link>
 
                 <p>Om oss</p>
             </div>
