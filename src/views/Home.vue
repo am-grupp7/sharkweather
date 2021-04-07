@@ -244,7 +244,7 @@ export default {
 
     .mobile {
         display: block;
-        background-color: #daeafb;
+        background-color: #b0d2ee;
         width: 100%;
     }
 
