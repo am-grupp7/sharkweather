@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="desktop">
         <div class="dayselector">Måndag Tisdag Onsdag...</div>
         <div class="city">Göteborg</div>
         <div class="chart">
@@ -11,9 +11,29 @@
             ></apexchart>
         </div>
     </div>
+    <div class="mobile">
+        <apexchart
+            type="bar"
+            height="300"
+            :options="chartOptions"
+            :series="series"
+        ></apexchart>
+    </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+@media only screen and (max-width: 650px) {
+    .desktop {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .mobile {
+        display: none;
+    }
+}
+</style>
 
 <script>
 //import ApexCharts from "apexcharts";

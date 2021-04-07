@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="desktop">
         <div class="dayselector">
             <div class="inner">
                 <day-select
@@ -97,15 +97,86 @@
             </apexchart>
         </div>
     </div>
+
+    <div class="mobile">
+        <div class="days">
+            <day-select
+                :dayNumber="0"
+                buttonText="Idag"
+                dayFormat="eee d/M"
+                :choseI="0"
+                :choseLimit="23"
+                :precipListValues="precipListValues"
+                :precipListTimes="precipListTimes"
+                @selected-values="displayGraph"
+            ></day-select>
+
+            <day-select
+                :dayNumber="1"
+                buttonText="Imorgon"
+                dayFormat="eee d/M"
+                :choseI="24"
+                :choseLimit="44"
+                :precipListValues="precipListValues"
+                :precipListTimes="precipListTimes"
+                @selected-values="displayGraph"
+            ></day-select>
+
+            <day-select
+                :dayNumber="2"
+                buttonText=""
+                dayFormat="eeee d/M"
+                :choseI="45"
+                :choseLimit="49"
+                :precipListValues="precipListValues"
+                :precipListTimes="precipListTimes"
+                @selected-values="displayGraph"
+            ></day-select>
+
+            <day-select
+                :dayNumber="3"
+                buttonText=""
+                dayFormat="eeee d/M"
+                :choseI="50"
+                :choseLimit="54"
+                :precipListValues="precipListValues"
+                :precipListTimes="precipListTimes"
+                @selected-values="displayGraph"
+            ></day-select>
+        </div>
+        <apexchart
+            type="bar"
+            height="300"
+            :options="chartOptions"
+            :series="series"
+        >
+        </apexchart>
+    </div>
 </template>
 <style scoped>
-.dayselector {
-    display: flex;
-    flex-direction: row;
-    padding: 1%;
+@media only screen and (max-width: 650px) {
+    .desktop {
+        display: none;
+    }
+    .days {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
-.inner {
-    margin: 5px;
+
+@media only screen and (min-width: 601px) {
+    .mobile {
+        display: none;
+    }
+    .dayselector {
+        display: flex;
+        flex-direction: row;
+        padding: 1%;
+    }
+    .inner {
+        margin: 5px;
+    }
 }
 </style>
 

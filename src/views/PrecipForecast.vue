@@ -88,7 +88,9 @@
         <div class="button-div">
             <input class="button" type="button" value="Göteborg" />
         </div>
-        <div class="graph-today"></div>
+        <div class="graph-today">
+            <precip-graph></precip-graph>
+        </div>
         <div class="graph-tomorow"></div>
     </div>
 </template>
@@ -140,6 +142,10 @@ export default {
         font-weight: bold;
         border-radius: 7px;
         border: 1px solid grey;
+    }
+    .graph-today {
+        background-color: white;
+        padding-top: 1em;
     }
 
     .menuimage {
