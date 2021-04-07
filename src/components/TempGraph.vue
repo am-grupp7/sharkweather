@@ -134,8 +134,9 @@ export default {
                 plotOptions: {
                     bar: {
                         horizontal: false,
-                        columnWidth: '100%',
+                        columnWidth: '50%',
                         endingShape: 'rounded',
+                        
                     },
                 },
                 dataLabels: {
@@ -149,7 +150,19 @@ export default {
 
                 xaxis: {
                     categories: [],
+                    title: {
+                      text: 'Tid i timmar'
+                    }
                 },
+
+                yaxis: {
+                  title: {
+                    text: 'Temperatur i °c'
+                  }
+                },
+                fill: {
+                  colors: ['#FF8500'],
+                }
             },
         }
     },

@@ -133,6 +133,15 @@ export default {
 
                 xaxis: {
                     categories: [],
+                    title: {
+                      text: 'Tid i timmar'
+                    }
+                },
+
+                yaxis: {
+                  title: {
+                    text: 'Nederbörd i mm'
+                  }
                 },
             },
         }
