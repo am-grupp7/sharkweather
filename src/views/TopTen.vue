@@ -42,6 +42,32 @@
     </div>
 
     <div class="mobile">
+        <div class="menu">
+            <label for="show-menu" class="show-menu">
+                <img
+                    :src="require('../assets//icons/Hamburgemeny.svg')"
+                    class="menuimage"
+                />
+            </label>
+        </div>
+        <div>
+            <input type="checkbox" id="show-menu" role="button" />
+            <ul id="menu">
+                <li><router-link to="/">Start</router-link></li>
+                <li><router-link to="/TopTen">Topp 10-lista</router-link></li>
+                <li>
+                    <router-link to="/TempForecast"
+                        >Temperaturprognos</router-link
+                    >
+                </li>
+                <li>
+                    <router-link to="/PrecipForecast"
+                        >Nederbördsprognos</router-link
+                    >
+                </li>
+                <li><router-link to="/About">Om oss</router-link></li>
+            </ul>
+        </div>
         <div class="main-topten">
             <h4>Topp 10-lista</h4>
             <p>
@@ -140,6 +166,12 @@ export default {
 
     .mobile {
         display: block;
+        background-color: #daeafb;
+        font-family: 'Tahoma', Geneva, Verdana, sans-serif;
+    }
+
+    h4 {
+        font-size: 23px;
     }
 
     .images {
@@ -150,6 +182,7 @@ export default {
         text-align: center;
         margin-left: 8%;
         margin-right: 8%;
+        padding-top: 4em;
     }
 
     .main-topten h4 {
@@ -229,6 +262,72 @@ export default {
     #vind:checked ~ .tabs #vind-tab {
         background: #a2ccf3;
         color: black;
+    }
+
+    .menuimage {
+        display: inline-block;
+        width: 15%;
+        margin-left: 1em;
+    }
+
+    .menu {
+        position: absolute;
+        width: 300px;
+        margin: -100px 0 0 -50px;
+        padding: 50px;
+        padding-top: 105px;
+        list-style-type: none;
+    }
+
+    ul {
+        list-style-type: none;
+        margin-top: 70px;
+        padding: 0;
+        display: none;
+        position: absolute;
+    }
+
+    li a {
+        padding-top: 2em;
+        display: block;
+        min-width: 280px;
+        height: 100px;
+        text-align: center;
+        font-family: Tahoma;
+        color: black;
+        background-color: #3191eb;
+        text-decoration: none;
+        text-align: left;
+        padding-left: 1em;
+    }
+
+    li:hover a {
+        color: white;
+        font-weight: bold;
+    }
+
+    .show-menu {
+        font-family: Tahoma;
+        text-decoration: none;
+        color: #fff;
+        padding: 10px 0;
+        display: block;
+    }
+    input[type='text'] {
+        width: 100%;
+        padding: 15px 40px;
+        font-size: 16px;
+        box-sizing: border-box;
+        border: 2px solid lightgray;
+        border-radius: 3px;
+    }
+
+    input[type='checkbox'] {
+        display: none;
+    }
+
+    input[type='checkbox']:checked ~ #menu {
+        display: block;
     }
 }
 

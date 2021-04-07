@@ -153,9 +153,12 @@
                 <p>Topp 10-lista</p>
             </div>
             <div class="uv">
-                <img class="images" :src="require('../assets//icons/UV.svg')" />
+                <img
+                    class="images"
+                    :src="require('../assets//icons/About.svg')"
+                />
 
-                <p>UV Index prognos</p>
+                <p>Om oss</p>
             </div>
         </div>
     </div>
@@ -249,6 +252,12 @@ export default {
         padding-top: 8em;
         text-align: center;
     }
+    .h1-mobile {
+        text-align: center;
+        font-family: 'Tahoma', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 3em;
+        font-weight: 100;
+    }
 
     .search-img {
         background: url(../assets/icons/Sök.svg) no-repeat scroll 8px 11px;
@@ -256,6 +265,11 @@ export default {
         background-color: white;
     }
 
+    h5 {
+        margin: 1em;
+        text-align: center;
+        color: gray;
+    }
     .find-location {
         display: flex;
         flex-direction: column;
@@ -265,26 +279,17 @@ export default {
         margin-left: auto;
         margin-right: auto;
     }
-
-    h5 {
-        margin: 1em;
+    .button {
+        background-color: #white;
+        border: 1px solid darkblue;
+        color: darkblue;
+        background-color: white;
+        padding: 15px;
         text-align: center;
-        color: gray;
-    }
-
-    .menuimage {
         display: inline-block;
-        width: 15%;
-        margin-left: 1em;
-    }
-
-    .menu {
-        position: absolute;
-        width: 300px;
-        margin: -100px 0 0 -50px;
-        padding: 50px;
-        padding-top: 105px;
-        list-style-type: none;
+        font-size: 16px;
+        width: 100%;
+        border-radius: 3px;
     }
 
     .image-nav {
@@ -309,24 +314,19 @@ export default {
         margin: 1em;
     }
 
-    .button {
-        background-color: #white;
-        border: 1px solid darkblue;
-        color: darkblue;
-        background-color: white;
-        padding: 15px;
-        text-align: center;
+    .menuimage {
         display: inline-block;
-        font-size: 16px;
-        width: 100%;
-        border-radius: 3px;
+        width: 15%;
+        margin-left: 1em;
     }
 
-    .h1-mobile {
-        text-align: center;
-        font-family: 'Tahoma', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 3em;
-        font-weight: 100;
+    .menu {
+        position: absolute;
+        width: 300px;
+        margin: -100px 0 0 -50px;
+        padding: 50px;
+        padding-top: 105px;
+        list-style-type: none;
     }
 
     ul {
@@ -400,10 +400,28 @@ export default {
         padding-top: 4em;
     }
 
+    .h1-mobile {
+        text-align: center;
+        font-family: 'Tahoma', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 2em;
+        font-weight: 100;
+    }
     .search-img {
         background: url(../assets/icons/Sök.svg) no-repeat scroll 8px 11px;
         background-size: 10%;
         background-color: white;
+    }
+    .button {
+        background-color: #white;
+        border: 1px solid darkblue;
+        color: darkblue;
+        background-color: white;
+        padding: 12px;
+        text-align: center;
+        display: inline-block;
+        font-size: 14px;
+        width: 100%;
+        border-radius: 3px;
     }
 
     .find-location {
@@ -420,21 +438,6 @@ export default {
         margin: 10px;
         text-align: center;
         color: gray;
-    }
-
-    .menuimage {
-        display: inline-block;
-        width: 15%;
-        margin-left: 1em;
-    }
-
-    .menu {
-        position: absolute;
-        width: 300px;
-        margin: -100px 0 0 -50px;
-        padding: 50px;
-        padding-top: 105px;
-        list-style-type: none;
     }
 
     .image-nav {
@@ -456,24 +459,19 @@ export default {
         text-align: center;
     }
 
-    .button {
-        background-color: #white;
-        border: 1px solid darkblue;
-        color: darkblue;
-        background-color: white;
-        padding: 12px;
-        text-align: center;
+    .menuimage {
         display: inline-block;
-        font-size: 14px;
-        width: 100%;
-        border-radius: 3px;
+        width: 15%;
+        margin-left: 1em;
     }
 
-    .h1-mobile {
-        text-align: center;
-        font-family: 'Tahoma', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 2em;
-        font-weight: 100;
+    .menu {
+        position: absolute;
+        width: 300px;
+        margin: -100px 0 0 -50px;
+        padding: 50px;
+        padding-top: 105px;
+        list-style-type: none;
     }
 
     ul {
