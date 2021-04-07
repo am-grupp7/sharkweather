@@ -80,28 +80,29 @@
                 <img
                     :src="require('../assets//icons/Hamburgemeny.svg')"
                     class="menuimage"
-                    id="menuimage"
                 />
             </label>
         </div>
-
-        <input type="checkbox" id="show-menu" role="button" />
-        <ul id="menu">
-            <li><router-link to="/">Start</router-link></li>
-            <li><router-link to="/TopTen">Topp 10-lista</router-link></li>
-            <li>
-                <router-link to="/TempForecast">Temperaturprognos</router-link>
-            </li>
-            <li>
-                <router-link to="/PrecipForecast"
-                    >Nederbördsprognos</router-link
-                >
-            </li>
-            <li><router-link to="/About">Om oss</router-link></li>
-        </ul>
-
+        <div>
+            <input type="checkbox" id="show-menu" role="button" />
+            <ul id="menu">
+                <li><router-link to="/">Start</router-link></li>
+                <li><router-link to="/TopTen">Topp 10-lista</router-link></li>
+                <li>
+                    <router-link to="/TempForecast"
+                        >Temperaturprognos</router-link
+                    >
+                </li>
+                <li>
+                    <router-link to="/PrecipForecast"
+                        >Nederbördsprognos</router-link
+                    >
+                </li>
+                <li><router-link to="/About">Om oss</router-link></li>
+            </ul>
+        </div>
         <div class="logo">
-            <img :src="require('../assets//icons/Sol.svg')" class="images" />
+            <p>Logo Here</p>
         </div>
         <h1 class="h1-mobile">Välkommen!</h1>
 
@@ -235,17 +236,18 @@ export default {
     }
 
     .images {
-        width: 20%;
+        width: 40%;
     }
 
     .mobile {
         display: block;
         background-color: #daeafb;
+        width: 100%;
     }
 
     .logo {
-        padding-top: 5em;
-        margin-left: 10em;
+        padding-top: 8em;
+        text-align: center;
     }
 
     .search-img {
@@ -264,7 +266,8 @@ export default {
         margin-right: auto;
     }
 
-    .eller {
+    h5 {
+        margin: 1em;
         text-align: center;
         color: gray;
     }
@@ -285,20 +288,25 @@ export default {
     }
 
     .image-nav {
-        display: flex;
+        display: grid;
+        grid-template-columns: 250px 250px;
         justify-content: center;
     }
     .regn {
         text-align: center;
+        margin: 10px;
     }
     .sol {
         text-align: center;
+        margin: 10px;
     }
     .lista {
         text-align: center;
+        margin: 1em;
     }
     .uv {
         text-align: center;
+        margin: 1em;
     }
 
     .button {
@@ -323,41 +331,29 @@ export default {
 
     ul {
         list-style-type: none;
-        margin: 0;
+        margin-top: 70px;
         padding: 0;
+        display: none;
         position: absolute;
     }
 
-    li {
-        padding: 0px 0;
-    }
-
     li a {
+        padding-top: 2em;
         display: block;
-        min-width: 140px;
-        height: 50px;
+        min-width: 280px;
+        height: 100px;
         text-align: center;
-        line-height: 50px;
         font-family: Tahoma;
-        color: #fff;
-        background-color: #4cb8e4;
+        color: black;
+        background-color: #3191eb;
         text-decoration: none;
+        text-align: left;
+        padding-left: 1em;
     }
 
     li:hover a {
-        background: #19c589;
-    }
-
-    li:hover ul a {
-        background: #2da3d4;
-        color: #2f3036;
-        height: 40px;
-        line-height: 40px;
-    }
-
-    li:hover ul a:hover {
-        background: #2da3d4;
-        color: #fff;
+        color: white;
+        font-weight: bold;
     }
 
     .show-menu {
@@ -365,7 +361,7 @@ export default {
         text-decoration: none;
         color: #fff;
         padding: 10px 0;
-        display: none;
+        display: block;
     }
     input[type='text'] {
         width: 100%;
@@ -383,26 +379,152 @@ export default {
     input[type='checkbox']:checked ~ #menu {
         display: block;
     }
-    /*Responsive Styles*/
-    @media screen and (max-width: 760px) {
-        /*Make dropdown links appear inline*/
-        ul {
-            position: static;
-            display: none;
-        }
-        /*Create vertical spacing*/
-        li {
-            margin-bottom: 1px;
-        }
-        /*Make all menu links full width*/
-        ul li,
-        li a {
-            width: 100%;
-        }
-        /*Display 'show menu' link*/
-        .show-menu {
-            display: block;
-        }
+}
+
+@media only screen and (max-width: 490px) {
+    .home {
+        display: none;
+    }
+
+    .images {
+        width: 30%;
+    }
+
+    .mobile {
+        display: block;
+        background-color: #daeafb;
+        width: 100%;
+    }
+
+    .logo {
+        padding-top: 4em;
+    }
+
+    .search-img {
+        background: url(../assets/icons/Sök.svg) no-repeat scroll 8px 11px;
+        background-size: 10%;
+        background-color: white;
+    }
+
+    .find-location {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        margin-top: 3em;
+        margin-bottom: 1em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h5 {
+        margin: 10px;
+        text-align: center;
+        color: gray;
+    }
+
+    .menuimage {
+        display: inline-block;
+        width: 15%;
+        margin-left: 1em;
+    }
+
+    .menu {
+        position: absolute;
+        width: 300px;
+        margin: -100px 0 0 -50px;
+        padding: 50px;
+        padding-top: 105px;
+        list-style-type: none;
+    }
+
+    .image-nav {
+        display: grid;
+        grid-template-columns: 180px 180px;
+        justify-content: center;
+        margin-top: 2em;
+    }
+    .regn {
+        text-align: center;
+    }
+    .sol {
+        text-align: center;
+    }
+    .lista {
+        text-align: center;
+    }
+    .uv {
+        text-align: center;
+    }
+
+    .button {
+        background-color: #white;
+        border: 1px solid darkblue;
+        color: darkblue;
+        background-color: white;
+        padding: 12px;
+        text-align: center;
+        display: inline-block;
+        font-size: 14px;
+        width: 100%;
+        border-radius: 3px;
+    }
+
+    .h1-mobile {
+        text-align: center;
+        font-family: 'Tahoma', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 2em;
+        font-weight: 100;
+    }
+
+    ul {
+        list-style-type: none;
+        margin-top: 70px;
+        padding: 0;
+        display: none;
+        position: absolute;
+    }
+
+    li a {
+        padding-top: 2em;
+        display: block;
+        min-width: 280px;
+        height: 100px;
+        text-align: center;
+        font-family: Tahoma;
+        color: black;
+        background-color: #3191eb;
+        text-decoration: none;
+        text-align: left;
+        padding-left: 1em;
+    }
+
+    li:hover a {
+        color: white;
+        font-weight: bold;
+    }
+
+    .show-menu {
+        font-family: Tahoma;
+        text-decoration: none;
+        color: #fff;
+        padding: 10px 0;
+        display: block;
+    }
+    input[type='text'] {
+        width: 100%;
+        padding: 12px 40px;
+        font-size: 14px;
+        box-sizing: border-box;
+        border: 2px solid lightgray;
+        border-radius: 3px;
+    }
+
+    input[type='checkbox'] {
+        display: none;
+    }
+
+    input[type='checkbox']:checked ~ #menu {
+        display: block;
     }
 }
 </style>
