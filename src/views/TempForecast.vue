@@ -7,24 +7,40 @@
         </div>
         <div class="innerbottom">
             <div class="infobox">
-                <div class="headline">
-                    <h2>Temperatur</h2>
+                <div class="header">
+                    <h3>Temperaturer</h3>
                     <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Placeat quae quo reiciendis quas aspernatur at,
-                        eligendi ipsum, delectus fugit, odit earum? Vero nulla
-                        tenetur vitae praesentium expedita odit recusandae
-                        quasi.
+                        Här finns prognoser för temperaturer. <br />
+                        Välj en plats och dag som du vill se prognosen för.
+                        Prognoserna kommer från SHMIs öppna api.
                     </p>
                 </div>
 
                 <div class="breadText">
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Cupiditate quae praesentium consequatur ipsa dolor
-                        laboriosam! Deleniti iure quisquam soluta ut fugit eaque
-                        facere mollitia illum inventore, cum dolorem maxime
-                        necessitatibus.
+                        Lufttemperatur är ett mått på luftmolekylernas
+                        genomsnittliga rörelseenergi. Denna energi härstammar
+                        primärt från solstrålningen. Nära ekvatorn träffar
+                        solstrålarna markytan nästan vinkelrätt mitt på dagen,
+                        medan de träffar markytan med sned vinkel närmare polen.
+                        Varje ytenhet vid polerna får därför ta emot mindre
+                        solenergi jämfört med närmare ekvatorn
+                    </p>
+                    <p>
+                        Områden med mycket låga temperaturer är därför jordens
+                        poler. Sydpolen är kallare än Nordpolen. Det beror på
+                        att Sydpolen är belägen på drygt 2 800 meters höjd över
+                        havet i det inre av en kontinent, medan Nordpolen är
+                        belägen på ett istäckt hav. Medeltemperaturen för den
+                        kallaste månaden är cirka -33 grader vid Nordpolen och
+                        -60 vid Sydpolen. Medeltemperaturen för den varmaste
+                        månaden är nära noll vid Nordpolen och -28 vid Sydpolen.
+                    </p>
+                    <p>
+                        Medeltemperaturen för sydligaste Sverige är omkring 0°C
+                        för den kallaste månaden och 16-17°C för den varmaste. I
+                        norra Norrlands inland är det cirka -15°C under den
+                        kallaste månaden och 12-13°C under den varmaste.
                     </p>
                 </div>
             </div>

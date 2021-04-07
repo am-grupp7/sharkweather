@@ -15,9 +15,10 @@ input {
 </style>
 
 <script>
-import { format } from 'date-fns'
+import { format, isSameDay } from 'date-fns'
 import { sv } from 'date-fns/locale'
 import { addDays } from 'date-fns'
+import { parse } from 'date-fns/esm'
 
 export default {
     name: 'DaySelect',
@@ -38,10 +39,10 @@ export default {
         choseLimit: {
             type: Number,
         },
-        precipListValues: {
+        listValues: {
             type: Array,
         },
-        precipListTimes: {
+        listTimes: {
             type: Array,
         },
     },
@@ -59,14 +60,7 @@ export default {
     },
     methods: {
         selectDay() {
-            for (let i = `${this.choseI}`; i <= `${this.choseLimit}`; i++) {
-                let a = `${this.precipListValues[i]}`
-                let b = `${this.precipListTimes[i]}`
-                this.chosenDayValues.push(a)
-                this.chosenDayTimes.push(b)
-            }
-            //console.log(this.chosenDayValues)
-            //console.log(this.chosenDayTimes)
+            this.fillListWithCurrentDay(`${this.dayNumber}`)
             this.selectedValues = String(this.chosenDayValues)
             this.selcetedTimes = String(this.chosenDayTimes)
             this.$emit(
@@ -76,6 +70,26 @@ export default {
             )
             this.chosenDayValues = []
             this.chosenDayTimes = []
+        },
+        fillListWithCurrentDay() {
+            for (let i = 0; i < this.listTimes.length; i++) {
+                const date = parse(
+                    `${this.listTimes[i]}`,
+                    "yyyy-MM-dd'T'HH:mm:ssX",
+                    new Date()
+                )
+                const showDataForThisDate = addDays(
+                    new Date(),
+                    `${this.dayNumber}`
+                )
+                if (isSameDay(date, showDataForThisDate)) {
+                    this.chosenDayValues.push(this.listValues[i])
+                    this.chosenDayTimes.push(date)
+                }
+            }
+
+            console.log('ChosenDayValues,', this.chosenDayValues)
+            console.log('ChosenDayTimes, ', this.chosenDayTimes)
         },
     },
 }

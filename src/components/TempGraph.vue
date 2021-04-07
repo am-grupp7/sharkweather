@@ -1,16 +1,101 @@
 <template>
     <div class="desktop">
         <div class="dayselector">Måndag Tisdag Onsdag...</div>
-        <div class="city">Göteborg</div>
-        <div class="chart">
-            <apexchart
-                type="bar"
-                height="400"
-                :options="chartOptions"
-                :series="series"
-            ></apexchart>
+        <div class="inner">
+            <day-select
+                :dayNumber="0"
+                buttonText="Idag"
+                dayFormat="eee d/M"
+                :choseI="0"
+                :choseLimit="23"
+                :listValues="tempListValues"
+                :listTimes="tempListTimes"
+                @selected-values="displayGraph"
+            ></day-select>
+        </div>
+        <div class="inner">
+            <day-select
+                :dayNumber="1"
+                buttonText="Imorgon"
+                dayFormat="eee d/M"
+                :choseI="24"
+                :choseLimit="44"
+                :listValues="tempListValues"
+                :listTimes="tempListTimes"
+                @selected-values="displayGraph"
+            ></day-select>
+        </div>
+        <div class="inner">
+            <day-select
+                :dayNumber="2"
+                buttonText=""
+                dayFormat="eeee d/M"
+                :choseI="45"
+                :choseLimit="49"
+                :listValues="tempListValues"
+                :listTimes="tempListTimes"
+                @selected-values="displayGraph"
+            ></day-select>
+        </div>
+        <div class="inner">
+            <day-select
+                :dayNumber="3"
+                buttonText=""
+                dayFormat="eeee d/M"
+                :choseI="50"
+                :choseLimit="54"
+                :listValues="tempListValues"
+                :listTimes="tempListTimes"
+                @selected-values="displayGraph"
+            ></day-select>
+        </div>
+        <div class="inner">
+            <day-select
+                :dayNumber="4"
+                buttonText=""
+                dayFormat="eeee d/M"
+                :choseI="55"
+                :choseLimit="59"
+                :listValues="tempListValues"
+                :listTimes="tempListTimes"
+                @selected-values="displayGraph"
+            ></day-select>
+        </div>
+        <div class="inner">
+            <day-select
+                :dayNumber="5"
+                buttonText=""
+                dayFormat="eeee d/M"
+                :choseI="60"
+                :choseLimit="62"
+                :listValues="tempListValues"
+                :listTimes="tempListTimes"
+                @selected-values="displayGraph"
+            ></day-select>
+        </div>
+        <div class="inner">
+            <day-select
+                :dayNumber="6"
+                buttonText=""
+                dayFormat="eeee d/M"
+                :choseI="63"
+                :choseLimit="65"
+                :listValues="tempListValues"
+                :listTimes="tempListTimes"
+                @selected-values="displayGraph"
+            ></day-select>
         </div>
     </div>
+    <div class="city">Göteborg</div>
+    <div class="chart">
+        <apexchart
+            type="bar"
+            height="400"
+            :options="chartOptions"
+            :series="series"
+        ></apexchart>
+    </div>
+
     <div class="mobile">
         <apexchart
             type="bar"
@@ -32,6 +117,14 @@
     .mobile {
         display: none;
     }
+    .dayselector {
+        display: flex;
+        flex-direction: row;
+        padding: 1%;
+    }
+    .inner {
+        margin: 5px;
+    }
 }
 </style>
 
@@ -39,8 +132,12 @@
 //import ApexCharts from "apexcharts";
 
 import { format } from 'date-fns'
+import DaySelect from '../components/DaySelect.vue'
 export default {
     name: 'TempGraph',
+    components: {
+        DaySelect,
+    },
     props: {},
     data() {
         return {
@@ -56,7 +153,7 @@ export default {
                 plotOptions: {
                     bar: {
                         horizontal: false,
-                        columnWidth: '100%',
+                        columnWidth: '50%',
                         endingShape: 'rounded',
                     },
                 },
@@ -71,6 +168,18 @@ export default {
 
                 xaxis: {
                     categories: [],
+                    title: {
+                        text: 'Tid i timmar',
+                    },
+                },
+
+                yaxis: {
+                    title: {
+                        text: 'Temperatur i °c',
+                    },
+                },
+                fill: {
+                    colors: ['#FF8500'],
                 },
             },
         }
@@ -88,19 +197,18 @@ export default {
                 this.tempListValues.push(temp)
                 this.tempListTimes.push(hourlyData.validTime)
             }
-            this.tempListValues.length = 24
-            this.tempListTimes.length = 24
+
             this.displayGraph()
         },
-        displayGraph() {
+        displayGraph(chosenDayValues = [], chosenDayTimes = []) {
             this.series = [
                 {
-                    name: 'Temperaturer',
-                    data: this.tempListValues,
+                    name: 'Temperaturer (°c)',
+                    data: chosenDayValues,
                 },
             ]
             this.chartOptions.xaxis.categories.length = 0
-            for (let val of this.tempListTimes) {
+            for (let val of chosenDayTimes) {
                 let formattedDate = format(new Date(val), 'HH')
                 this.chartOptions.xaxis.categories.push(formattedDate)
             }
