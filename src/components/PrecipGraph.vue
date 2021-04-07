@@ -90,10 +90,8 @@
                 :dayNumber="0"
                 buttonText="Idag"
                 dayFormat="eee d/M"
-                :choseI="0"
-                :choseLimit="23"
-                :precipListValues="precipListValues"
-                :precipListTimes="precipListTimes"
+                :listValues="precipListValues"
+                :listTimes="precipListTimes"
                 @selected-values="displayGraph"
             ></day-select>
 
@@ -101,10 +99,8 @@
                 :dayNumber="1"
                 buttonText="Imorgon"
                 dayFormat="eee d/M"
-                :choseI="24"
-                :choseLimit="44"
-                :precipListValues="precipListValues"
-                :precipListTimes="precipListTimes"
+                :listValues="precipListValues"
+                :listTimes="precipListTimes"
                 @selected-values="displayGraph"
             ></day-select>
 
@@ -112,10 +108,8 @@
                 :dayNumber="2"
                 buttonText=""
                 dayFormat="eeee d/M"
-                :choseI="45"
-                :choseLimit="49"
-                :precipListValues="precipListValues"
-                :precipListTimes="precipListTimes"
+                :listValues="precipListValues"
+                :listTimes="precipListTimes"
                 @selected-values="displayGraph"
             ></day-select>
 
@@ -123,10 +117,8 @@
                 :dayNumber="3"
                 buttonText=""
                 dayFormat="eeee d/M"
-                :choseI="50"
-                :choseLimit="54"
-                :precipListValues="precipListValues"
-                :precipListTimes="precipListTimes"
+                :listValues="precipListValues"
+                :listTimes="precipListTimes"
                 @selected-values="displayGraph"
             ></day-select>
         </div>
