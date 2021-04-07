@@ -39,7 +39,7 @@
                     </div>
                 </div>
             </div>
-            <div class="inner">
+            <div class="inner1">
                 <div class="find-location">
                     <div class="serchbar">
                         <input
@@ -58,7 +58,7 @@
                     </div>
                 </div>
             </div>
-            <div class="inner">
+            <div class="inner2">
                 <div class="umbrella">
                     <img
                         id="umbrella"
@@ -95,9 +95,27 @@ export default {
 .wilkommen {
     background-color: #daeafb;
 }
+
+h3 {
+    text-align: left;
+    margin-left: 1em;
+}
+
 .find-location {
     background-color: #daeafb;
     padding: 4em;
+}
+
+.top-inner {
+    background-color: #daeafb;
+    size: 10%;
+    font-family: 'Tahoma';
+}
+
+.inner1 {
+    margin-left: 5em;
+    margin-right: 5em;
+    padding: 2em;
 }
 .lower-row {
     display: flex;
