@@ -108,10 +108,10 @@
         <div class="find-location">
             <div class="search-box">
                 <input
-                    id="serch"
+                    class="search-img"
                     type="text"
                     name="serch-location"
-                    placeholder="&nbsp; &nbsp; &nbsp; Sök efter en plats"
+                    placeholder="Sök efter en plats"
                 />
             </div>
             <div class="eller">
@@ -126,35 +126,35 @@
             </div>
         </div>
 
-        <div class="main-buttons">
+        <div class="image-nav">
             <div class="regn">
                 <img
                     :src="require('../assets//icons/Regn.svg')"
                     class="images"
                 />
-                <br />
-                <h5>Nederbörds prognos</h5>
+
+                <p>Nederbörds prognos</p>
             </div>
             <div class="sol">
                 <img
                     :src="require('../assets//icons/Sol.svg')"
                     class="images"
                 />
-                <br />
-                <h5>Soltimmar</h5>
+
+                <p>Soltimmar</p>
             </div>
             <div class="lista">
                 <img
                     :src="require('../assets//icons/Lista.svg')"
                     class="images"
                 />
-                <br />
-                <h5>Topp 10-lista</h5>
+
+                <p>Topp 10-lista</p>
             </div>
             <div class="uv">
                 <img class="images" :src="require('../assets//icons/UV.svg')" />
-                <br />
-                <h5>UV Index prognos</h5>
+
+                <p>UV Index prognos</p>
             </div>
         </div>
     </div>
@@ -248,9 +248,9 @@ export default {
         margin-left: 10em;
     }
 
-    #serch {
-        background: url(../assets/icons/Sök.svg) no-repeat scroll 1px 1px;
-        background-size: 9%;
+    .search-img {
+        background: url(../assets/icons/Sök.svg) no-repeat scroll 8px 11px;
+        background-size: 10%;
         background-color: white;
     }
 
@@ -258,32 +258,21 @@ export default {
         display: flex;
         flex-direction: column;
         width: 50%;
+        margin-top: 3em;
+        margin-bottom: 4em;
         margin-left: auto;
         margin-right: auto;
     }
 
-    .center {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
     .eller {
         text-align: center;
-    }
-
-    .w-50 {
-        width: 50%;
-        display: inline-block;
-    }
-
-    .row {
-        padding: 10px;
+        color: gray;
     }
 
     .menuimage {
         display: inline-block;
         width: 15%;
+        margin-left: 1em;
     }
 
     .menu {
@@ -295,29 +284,39 @@ export default {
         list-style-type: none;
     }
 
-    .main-buttons {
+    .image-nav {
         display: flex;
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
+        justify-content: center;
+    }
+    .regn {
+        text-align: center;
+    }
+    .sol {
+        text-align: center;
+    }
+    .lista {
+        text-align: center;
+    }
+    .uv {
+        text-align: center;
     }
 
     .button {
         background-color: #white;
-        border: none;
-        color: blue;
-        padding: 15px 32px;
+        border: 1px solid darkblue;
+        color: darkblue;
+        background-color: white;
+        padding: 15px;
         text-align: center;
-        text-decoration: none;
         display: inline-block;
-        font-size: 15px;
-        margin-bottom: 4em;
+        font-size: 16px;
         width: 100%;
+        border-radius: 3px;
     }
 
     .h1-mobile {
         text-align: center;
-        font-family: Tahoma, sans-serif;
+        font-family: 'Tahoma', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 3em;
         font-weight: 100;
     }
@@ -330,7 +329,7 @@ export default {
     }
 
     li {
-        padding: 10px 0;
+        padding: 0px 0;
     }
 
     li a {
@@ -339,7 +338,7 @@ export default {
         height: 50px;
         text-align: center;
         line-height: 50px;
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-family: Tahoma;
         color: #fff;
         background-color: #4cb8e4;
         text-decoration: none;
@@ -361,28 +360,8 @@ export default {
         color: #fff;
     }
 
-    li ul {
-        display: none;
-    }
-
-    li ul li {
-        display: block;
-        float: none;
-    }
-
-    li ul li a {
-        width: auto;
-        min-width: 100px;
-        padding: 0 20px;
-    }
-
-    ul li a:hover + .hidden,
-    .hidden:hover {
-        display: block;
-    }
-
     .show-menu {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-family: Tahoma;
         text-decoration: none;
         color: #fff;
         padding: 10px 0;
@@ -390,9 +369,11 @@ export default {
     }
     input[type='text'] {
         width: 100%;
-        padding: 15px 20px;
-        margin: 8px 0;
+        padding: 15px 40px;
+        font-size: 16px;
         box-sizing: border-box;
+        border: 2px solid lightgray;
+        border-radius: 3px;
     }
 
     input[type='checkbox'] {
