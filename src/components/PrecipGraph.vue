@@ -118,7 +118,7 @@ export default {
                 plotOptions: {
                     bar: {
                         horizontal: false,
-                        columnWidth: '100%',
+                        columnWidth: '50%',
                         endingShape: 'rounded',
                     },
                 },
