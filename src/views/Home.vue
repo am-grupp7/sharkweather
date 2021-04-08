@@ -40,7 +40,7 @@
                     </div>
                 </div>
             </div>
-            <div class="inner">
+            <div class="inner1">
                 <div class="find-location">
                     <div class="serchbar">
                         <input
@@ -59,7 +59,7 @@
                     </div>
                 </div>
             </div>
-            <div class="inner">
+            <div class="inner2">
                 <div class="umbrella">
                     <img
                         id="umbrella"
@@ -197,7 +197,8 @@ export default {
     }
 
     .wilkommen {
-        background-color: #daeafb;
+        background: url(../assets/clouds.png);
+        background-size: 115%;
     }
 
     .find-location {
