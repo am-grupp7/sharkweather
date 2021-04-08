@@ -197,7 +197,8 @@ export default {
     }
 
     .wilkommen {
-        background-color: #daeafb;
+        background: url(../assets/clouds.png);
+        background-size: 115%;
     }
 
     .find-location {
