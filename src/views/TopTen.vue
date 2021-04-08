@@ -285,6 +285,7 @@ export default {
         padding: 0;
         display: none;
         position: absolute;
+        z-index: 1;
     }
 
     li a {
