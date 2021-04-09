@@ -19,9 +19,11 @@ export default {
             errorStr: null,
         }
     },
+    emits: ['geo'],
 
     methods: {
         findGeoLocation() {
+            console.log('Hey Bosse')
             if (!('geolocation' in navigator)) {
                 console.log('Geolocation is not available')
                 return
@@ -34,8 +36,10 @@ export default {
                     this.location = pos
                     let latitude = this.location.coords.latitude.toFixed(6)
                     let longitude = this.location.coords.longitude.toFixed(6)
+                    console.log(latitude)
+                    console.log(longitude)
 
-                    this.$emit('geolocationCoordinates', latitude, longitude)
+                    this.$emit('geo', latitude, longitude)
                 },
                 () => {
                     this.gettingLocation = false

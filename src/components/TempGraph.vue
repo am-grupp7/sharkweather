@@ -11,7 +11,6 @@
                     :listValues="tempListValues"
                     :listTimes="tempListTimes"
                     @selected-values="displayGraph"
-                    @geolocationCoordinates="fetchTempsFromCoordinates"
                 ></day-select>
             </div>
             <div class="inner">

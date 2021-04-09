@@ -50,7 +50,7 @@
                         />
                     </div>
                     <p>eller...</p>
-                    <find-location></find-location>
+                    <find-location @geo="findGeoLocation"></find-location>
                 </div>
             </div>
             <div class="inner">
