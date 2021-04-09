@@ -51,12 +51,7 @@
                         />
                     </div>
                     <p>eller...</p>
-                    <div class="your-location">
-                        <input
-                            type="button"
-                            value="Använd din nuvarande plats"
-                        />
-                    </div>
+                    <find-location @geo="findGeoLocation"></find-location>
                 </div>
             </div>
             <div class="inner2">
@@ -171,11 +166,13 @@
 <script>
 // @ is an alias to /src
 import TopTenBoard from '../components/TopTenBoard.vue'
+import FindLocation from '../components/FindLocation.vue'
 
 export default {
     name: 'Home',
     components: {
         TopTenBoard,
+        FindLocation,
     },
 }
 </script>
