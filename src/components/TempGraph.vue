@@ -154,11 +154,19 @@ export default {
         }
     },
     methods: {
-        async fetchTempsFromCoordinates(latitude, longitude) {
-            console.log('Latitude', latitude)
-            console.log('Longitude', longitude)
+        async fetchTempsFromCoordinates() {
+            let longitude =
+                this.$store.state.longitude == 0
+                    ? 11.973746
+                    : this.$store.state.longitude
+            let latitude =
+                this.$store.state.latitude == 0
+                    ? 57.719278
+                    : this.$store.state.latitude
+
+            console.log()
             const response = await fetch(
-                `https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/11.97/lat/57.7/data.json`,
+                `https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/${longitude}/lat/${latitude}/data.json`,
                 { headers: { Accept: 'application/json' } }
             )
             const json = await response.json()
