@@ -1,13 +1,11 @@
 <template>
-    <div>
+    <div class="desktop">
         <div class="dayselector">
             <div class="inner">
                 <day-select
                     :dayNumber="0"
                     buttonText="Idag"
                     dayFormat="eee d/M"
-                    :choseI="0"
-                    :choseLimit="23"
                     :listValues="precipListValues"
                     :listTimes="precipListTimes"
                     @selected-values="displayGraph"
@@ -18,8 +16,6 @@
                     :dayNumber="1"
                     buttonText="Imorgon"
                     dayFormat="eee d/M"
-                    :choseI="24"
-                    :choseLimit="44"
                     :listValues="precipListValues"
                     :listTimes="precipListTimes"
                     @selected-values="displayGraph"
@@ -30,8 +26,6 @@
                     :dayNumber="2"
                     buttonText=""
                     dayFormat="eeee d/M"
-                    :choseI="45"
-                    :choseLimit="49"
                     :listValues="precipListValues"
                     :listTimes="precipListTimes"
                     @selected-values="displayGraph"
@@ -42,8 +36,6 @@
                     :dayNumber="3"
                     buttonText=""
                     dayFormat="eeee d/M"
-                    :choseI="50"
-                    :choseLimit="54"
                     :listValues="precipListValues"
                     :listTimes="precipListTimes"
                     @selected-values="displayGraph"
@@ -54,8 +46,6 @@
                     :dayNumber="4"
                     buttonText=""
                     dayFormat="eeee d/M"
-                    :choseI="55"
-                    :choseLimit="59"
                     :listValues="precipListValues"
                     :listTimes="precipListTimes"
                     @selected-values="displayGraph"
@@ -66,8 +56,6 @@
                     :dayNumber="5"
                     buttonText=""
                     dayFormat="eeee d/M"
-                    :choseI="60"
-                    :choseLimit="62"
                     :listValues="precipListValues"
                     :listTimes="precipListTimes"
                     @selected-values="displayGraph"
@@ -78,8 +66,6 @@
                     :dayNumber="6"
                     buttonText=""
                     dayFormat="eeee d/M"
-                    :choseI="63"
-                    :choseLimit="65"
                     :listValues="precipListValues"
                     :listTimes="precipListTimes"
                     @selected-values="displayGraph"
@@ -97,15 +83,78 @@
             </apexchart>
         </div>
     </div>
+
+    <div class="mobile">
+        <div class="days">
+            <day-select
+                :dayNumber="0"
+                buttonText="Idag"
+                dayFormat="eee d/M"
+                :listValues="precipListValues"
+                :listTimes="precipListTimes"
+                @selected-values="displayGraph"
+            ></day-select>
+
+            <day-select
+                :dayNumber="1"
+                buttonText="Imorgon"
+                dayFormat="eee d/M"
+                :listValues="precipListValues"
+                :listTimes="precipListTimes"
+                @selected-values="displayGraph"
+            ></day-select>
+
+            <day-select
+                :dayNumber="2"
+                buttonText=""
+                dayFormat="eeee d/M"
+                :listValues="precipListValues"
+                :listTimes="precipListTimes"
+                @selected-values="displayGraph"
+            ></day-select>
+
+            <day-select
+                :dayNumber="3"
+                buttonText=""
+                dayFormat="eeee d/M"
+                :listValues="precipListValues"
+                :listTimes="precipListTimes"
+                @selected-values="displayGraph"
+            ></day-select>
+        </div>
+        <apexchart
+            type="bar"
+            height="300"
+            :options="chartOptions"
+            :series="series"
+        >
+        </apexchart>
+    </div>
 </template>
 <style scoped>
-.dayselector {
-    display: flex;
-    flex-direction: row;
-    padding: 1%;
+@media only screen and (max-width: 650px) {
+    .desktop {
+        display: none;
+    }
+    .days {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
-.inner {
-    margin: 5px;
+
+@media only screen and (min-width: 601px) {
+    .mobile {
+        display: none;
+    }
+    .dayselector {
+        display: flex;
+        flex-direction: row;
+        padding: 1%;
+    }
+    .inner {
+        margin: 5px;
+    }
 }
 </style>
 
@@ -132,7 +181,7 @@ export default {
                 plotOptions: {
                     bar: {
                         horizontal: false,
-                        columnWidth: '100%',
+                        columnWidth: '50%',
                         endingShape: 'rounded',
                     },
                 },
@@ -147,6 +196,15 @@ export default {
 
                 xaxis: {
                     categories: [],
+                    title: {
+                        text: 'Tid i timmar',
+                    },
+                },
+
+                yaxis: {
+                    title: {
+                        text: 'Nederbörd i mm',
+                    },
                 },
             },
         }
@@ -165,7 +223,7 @@ export default {
                 this.precipListValues.push(precip)
                 this.precipListTimes.push(hourlyData.validTime)
             }
-            console.log(this.precipListTimes)
+
             this.displayGraph()
         },
         displayGraph(chosenDayValues = [], chosenDayTimes = []) {

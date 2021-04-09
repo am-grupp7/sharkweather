@@ -50,6 +50,49 @@
             </div>
         </div>
     </div>
+
+    <div class="mobile">
+        <div class="menu">
+            <label for="show-menu" class="show-menu">
+                <img
+                    :src="require('../assets//icons/Hamburgemeny.svg')"
+                    class="menuimage"
+                />
+            </label>
+        </div>
+        <div>
+            <input type="checkbox" id="show-menu" role="button" />
+            <ul id="menu">
+                <li><router-link to="/">Start</router-link></li>
+                <li><router-link to="/TopTen">Topp 10-lista</router-link></li>
+                <li>
+                    <router-link to="/TempForecast"
+                        >Temperaturprognos</router-link
+                    >
+                </li>
+                <li>
+                    <router-link to="/PrecipForecast"
+                        >Nederbördsprognos</router-link
+                    >
+                </li>
+                <li><router-link to="/About">Om oss</router-link></li>
+            </ul>
+        </div>
+        <div class="header">
+            <h3>Nederbörd - sjudagarsprognos</h3>
+            <p>
+                Prognosen visar förväntad nederbörd i mm per <br />
+                för kommande sju dagar.
+            </p>
+        </div>
+        <div class="button-div">
+            <input class="button" type="button" value="Göteborg" />
+        </div>
+        <div class="graph-today">
+            <precip-graph></precip-graph>
+        </div>
+        <div class="graph-tomorow"></div>
+    </div>
 </template>
 <script>
 import PrecipGraph from '../components/PrecipGraph.vue'
@@ -64,17 +107,123 @@ export default {
 
 <style scoped>
 @media screen and (max-width: 767px) {
-    .breadtext {
+    .main-precipforecast {
         display: none;
     }
-    nav {
+
+    .mobile {
+        display: flex;
+        flex-direction: column;
+        background-color: #b0d2ee;
+        font-family: Tahoma;
+    }
+
+    .header {
+        padding-top: 3em;
+    }
+    .header h3 {
+        text-align: center;
+        font-weight: 600;
+    }
+    .header p {
+        text-align: left;
+        font-size: 18px;
+        margin-left: 4em;
+    }
+
+    .button-div {
+        align-self: center;
+        margin: 1em;
+    }
+    .button {
+        background-color: #e7f1fa;
+        padding: 12px 50px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 7px;
+        border: 1px solid grey;
+    }
+    .graph-today {
+        background-color: white;
+        padding-top: 1em;
+    }
+
+    .menuimage {
+        display: inline-block;
+        width: 15%;
+        margin-left: 1em;
+    }
+
+    .menu {
+        position: absolute;
+        width: 300px;
+        margin: -100px 0 0 -50px;
+        padding: 50px;
+        padding-top: 105px;
+        list-style-type: none;
+    }
+
+    ul {
+        list-style-type: none;
+        margin-top: 70px;
+        padding: 0;
         display: none;
+        position: absolute;
+        z-index: 1;
+    }
+
+    li a {
+        padding-top: 2em;
+        display: block;
+        min-width: 280px;
+        height: 100px;
+        text-align: center;
+        font-family: Tahoma;
+        color: black;
+        background-color: #3191eb;
+        text-decoration: none;
+        text-align: left;
+        padding-left: 1em;
+    }
+
+    li:hover a {
+        color: white;
+        font-weight: bold;
+    }
+
+    .show-menu {
+        font-family: Tahoma;
+        text-decoration: none;
+        color: #fff;
+        padding: 10px 0;
+        display: block;
+    }
+    input[type='text'] {
+        width: 100%;
+        padding: 15px 40px;
+        font-size: 16px;
+        box-sizing: border-box;
+        border: 2px solid lightgray;
+        border-radius: 3px;
+    }
+
+    input[type='checkbox'] {
+        display: none;
+    }
+
+    input[type='checkbox']:checked ~ #menu {
+        display: block;
     }
 }
 @media screen and (min-width: 768px) {
+    .mobile {
+        display: none;
+    }
+
     div {
         border: 1px solid black;
     }
+
     .main-precipforecast {
         display: grid;
         width: 100%;
