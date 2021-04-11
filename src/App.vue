@@ -38,6 +38,7 @@
         font-weight: bold;
         color: rgb(0, 0, 0);
         margin: 2%;
+        text-decoration: none;
     }
 
     #nav a.router-link-exact-active {

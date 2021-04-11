@@ -1,7 +1,6 @@
 <template>
     <div class="desktop">
         <div class="main-topten">
-            <nav>Start > Topp 10-lista</nav>
             <h1>Topp 10-lista</h1>
             <p>
                 Se var i landet det är varmast, regnar mest eller är blåsigast

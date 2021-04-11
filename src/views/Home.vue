@@ -3,73 +3,61 @@
         <!--<img alt="Vue logo" src="../assets/logo.png" />-->
         <div class="wilkommen">
             <h1>Välkommen!</h1>
+
             <p>
                 För att snabbare komma igång ber vi dig att välja din <br />
                 plats, den kommer vara default för informationen som <br />
                 visas, men du kan även ändra den senare.
             </p>
         </div>
-        <div class="lower-row">
-            <div class="inner">
+
+        <div class="top-tre">
+            <div class="top-tre-heading">
                 <h3>Dagens topp 3</h3>
-                <div class="top-tre">
-                    <div class="top-inner">
-                        <top-ten-board
-                            api-call="1"
-                            heading="Temperatur"
-                            plus="+"
-                            unit="°c"
-                            :length="3"
-                        ></top-ten-board>
-                    </div>
-                    <div class="top-inner">
-                        <top-ten-board
-                            api-call="7"
-                            heading="Nederbörd"
-                            unit="mm"
-                            :length="3"
-                        ></top-ten-board>
-                    </div>
-                    <div class="top-inner">
-                        <top-ten-board
-                            api-call="4"
-                            heading="Vindstyrka"
-                            unit="m/s"
-                            :length="3"
-                        ></top-ten-board>
-                    </div>
-                </div>
             </div>
-            <div class="inner">
-                <div class="find-location">
-                    <div class="serchbar">
-                        <input
-                            id="serch"
-                            type="text"
-                            name="serch-location"
-                            placeholder="     Sök efter en plats"
-                        />
-                    </div>
-                    <p>eller...</p>
-                    <div class="your-location">
-                        <input
-                            type="button"
-                            value="Använd din nuvarande plats"
-                        />
-                    </div>
-                </div>
+            <div class="top-inner1">
+                <top-ten-board
+                    api-call="1"
+                    heading="Temperatur"
+                    plus="+"
+                    unit="°c"
+                    :length="3"
+                ></top-ten-board>
             </div>
-            <div class="inner">
-                <div class="umbrella">
-                    <img
-                        id="umbrella"
-                        alt="Umbrella"
-                        src="../assets/icons/Regn.svg"
-                        width="50"
-                        height="50"
-                    />
-                    <h2>Paraply?</h2>
-                </div>
+            <div class="top-inner2">
+                <top-ten-board
+                    api-call="7"
+                    heading="Nederbörd"
+                    unit="mm"
+                    :length="3"
+                ></top-ten-board>
+            </div>
+            <div class="top-inner3">
+                <top-ten-board
+                    api-call="4"
+                    heading="Vindstyrka"
+                    unit="m/s"
+                    :length="3"
+                ></top-ten-board>
+            </div>
+        </div>
+
+        <div class="find-location">
+            <div class="serchbar">
+                <input
+                    class="search"
+                    type="text"
+                    name="serch-location"
+                    placeholder="     Sök efter en plats"
+                />
+            </div>
+            <p>eller...</p>
+            <div class="your-location">
+                <input
+                    type="button"
+                    value="Använd din nuvarande plats"
+                    class="button"
+                />
             </div>
         </div>
     </div>
@@ -135,7 +123,7 @@
                         class="images"
                 /></router-link>
 
-                <p>Nederbörds prognos</p>
+                <p>Nederbördsprognos</p>
             </div>
             <div class="sol">
                 <router-link to="/TempForecast">
@@ -144,7 +132,7 @@
                         class="images"
                 /></router-link>
 
-                <p>Soltimmar</p>
+                <p>Temperatur</p>
             </div>
             <div class="lista">
                 <router-link to="/TopTen">
@@ -181,7 +169,7 @@ export default {
 </script>
 
 <style scoped>
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 760px) {
     .home {
         display: block;
     }
@@ -192,52 +180,303 @@ export default {
 
     .home {
         display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 50% 50%;
+        grid-template-columns: 33.33% 33.33% 33.33%;
+        grid-template-rows: auto;
+        grid-template-areas:
+            'header header header'
+            'main main main'
+            '. sidebar .';
     }
 
     .wilkommen {
+        grid-area: header;
+        background-image: url(../assets/clouds.png);
+        height: 100%;
+        margin-bottom: 5em;
         background-color: #daeafb;
     }
-
-    .find-location {
-        background-color: #daeafb;
-        padding: 1em;
-    }
-
-    .lower-row {
-        display: flex;
-        flex-direction: row;
-        width: auto;
-    }
-
-    #serch {
-        background: url(../assets/icons/Sök.svg) no-repeat scroll 1px 1px;
-        background-size: 9%;
-        background-color: white;
-        display: block;
-    }
-
-    .umbrella {
-        display: flex;
-        padding: 1em;
-    }
-
-    #umbrella {
-        margin-right: 1em;
+    .wilkommen h1 {
+        margin-top: 3em;
     }
 
     .top-tre {
-        display: flex;
-        flex-direction: row;
+        grid-area: main;
+        display: grid;
+        grid-template-columns: 33.3% 33.3% 33.3%;
+        grid-template-rows: auto;
+        grid-template-areas:
+            'head head head'
+            'left center right';
+        margin-left: 0em;
     }
 
-    .top-inner {
-        size: 50%;
+    .top-tre-heading {
+        grid-area: head;
+    }
+
+    .top-tre-heading h3 {
+        font-size: 24px;
+        margin-bottom: 0px;
+    }
+
+    .top-inner1 {
+        grid-area: left;
+        background-color: #daeafb;
+        font-size: 16px;
+    }
+    .top-inner2 {
+        grid-area: center;
+        background-color: #daeafb;
+        font-size: 16px;
+    }
+    .top-inner3 {
+        grid-area: right;
+        background-color: #daeafb;
+        font-size: 16px;
+    }
+
+    .find-location {
+        grid-area: sidebar;
+        background-color: #daeafb;
+        padding: 2em;
+        margin: 1em 0em 0em 0em;
+    }
+
+    .find-location p {
+        margin: 12px;
+    }
+
+    .search {
+        background: url(../assets/icons/Sök.svg) no-repeat 5px 10px;
+        background-size: 10%;
+        background-color: white;
+        width: 100%;
+        padding: 10px 8px;
+        font-size: 16px;
+        box-sizing: border-box;
+        border: 2px solid lightgray;
+        border-radius: 4px;
+    }
+
+    .button {
+        background-color: white;
+        border: 1px solid darkblue;
+        color: darkblue;
+        background-color: white;
+        padding: 12px;
+        text-align: center;
+        display: inline-block;
+        font-size: 14px;
+        width: 100%;
+        border-radius: 4px;
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 1000px) {
+    .home {
+        display: block;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .home {
+        display: grid;
+        grid-template-columns: 33.33% 33.33% 33.33%;
+        grid-template-rows: auto;
+        grid-template-areas:
+            'header header header'
+            'main main sidebar';
+    }
+
+    .wilkommen {
+        grid-area: header;
+        background-image: url(../assets/clouds.png);
+        height: 100%;
+        margin-bottom: 5em;
+        background-color: #daeafb;
+    }
+    .wilkommen h1 {
+        margin-top: 3em;
+    }
+
+    .top-tre {
+        grid-area: main;
+        display: grid;
+        grid-template-columns: 33.3% 33.3% 33.3%;
+        grid-template-rows: auto;
+        grid-template-areas:
+            'head head head'
+            'left center right';
+        margin-left: 0.6em;
+    }
+
+    .top-tre-heading {
+        grid-area: head;
+    }
+
+    .top-tre-heading h3 {
+        font-size: 24px;
+        margin-bottom: 0px;
+    }
+
+    .top-inner1 {
+        grid-area: left;
+        background-color: #daeafb;
+        font-size: 16px;
+    }
+    .top-inner2 {
+        grid-area: center;
+        background-color: #daeafb;
+        font-size: 16px;
+    }
+    .top-inner3 {
+        grid-area: right;
+        background-color: #daeafb;
+        font-size: 16px;
+    }
+
+    .find-location {
+        grid-area: sidebar;
+        background-color: #daeafb;
+        padding: 3em;
+        margin: 3em 1em 0em 1em;
+    }
+
+    .find-location p {
+        margin: 12px;
+    }
+
+    .search {
+        background: url(../assets/icons/Sök.svg) no-repeat 5px 10px;
+        background-size: 10%;
+        background-color: white;
+        width: 100%;
+        padding: 10px 8px;
+        font-size: 16px;
+        box-sizing: border-box;
+        border: 2px solid lightgray;
+        border-radius: 4px;
+    }
+
+    .button {
+        background-color: white;
+        border: 1px solid darkblue;
+        color: darkblue;
+        background-color: white;
+        padding: 12px;
+        text-align: center;
+        display: inline-block;
+        font-size: 14px;
+        width: 100%;
+        border-radius: 4px;
+    }
+}
+
+@media only screen and (min-width: 1560px) {
+    .home {
+        display: block;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .home {
+        display: grid;
+        grid-template-columns: 33.33% 33.33% 33.33%;
+        grid-template-rows: auto;
+        grid-template-areas:
+            'header header header'
+            'main main sidebar';
+    }
+
+    .wilkommen {
+        grid-area: header;
+        background-image: url(../assets/clouds.png);
+        height: 100%;
+        margin-bottom: 5em;
+        background-color: #daeafb;
+    }
+    .wilkommen h1 {
+        margin-top: 3em;
+    }
+
+    .top-tre {
+        grid-area: main;
+        display: grid;
+        grid-template-columns: 33.3% 33.3% 33.3%;
+        grid-template-rows: auto;
+        grid-template-areas:
+            'head head head'
+            'left center right';
+        margin-left: 1em;
+    }
+
+    .top-tre-heading {
+        grid-area: head;
+    }
+
+    .top-tre-heading h3 {
+        font-size: 24px;
+        margin-bottom: 0px;
+    }
+
+    .top-inner1 {
+        grid-area: left;
+        background-color: #daeafb;
+        font-size: 18px;
+    }
+    .top-inner2 {
+        grid-area: center;
+        background-color: #daeafb;
+        font-size: 18px;
+    }
+    .top-inner3 {
+        grid-area: right;
+        background-color: #daeafb;
+        font-size: 18px;
+    }
+
+    .find-location {
+        grid-area: sidebar;
+        background-color: #daeafb;
+        padding: 3em;
+        margin: 3em 3em 0em 3em;
+    }
+
+    .find-location p {
+        margin: 12px;
+    }
+
+    .search {
+        background: url(../assets/icons/Sök.svg) no-repeat 5px 10px;
+        background-size: 8%;
+        background-color: white;
+        width: 70%;
+        padding: 12px 15px;
+        font-size: 16px;
+        box-sizing: border-box;
+        border: 2px solid lightgray;
+        border-radius: 4px;
+    }
+
+    .button {
+        background-color: white;
+        border: 1px solid darkblue;
+        color: darkblue;
+        background-color: white;
+        padding: 12px;
+        text-align: center;
+        display: inline-block;
+        font-size: 14px;
+        width: 70%;
+        border-radius: 4px;
+    }
+}
+
+@media only screen and (max-width: 759px) {
     .home {
         display: none;
     }
@@ -417,7 +656,7 @@ export default {
         background-color: white;
     }
     .button {
-        background-color: #white;
+        background-color: white;
         border: 1px solid darkblue;
         color: darkblue;
         background-color: white;
