@@ -87,6 +87,7 @@
     <div class="mobile">
         <div class="days">
             <day-select
+                class="day-select-button"
                 :dayNumber="0"
                 buttonText="Idag"
                 dayFormat="eee d/M"
@@ -96,6 +97,7 @@
             ></day-select>
 
             <day-select
+                class="day-select-button"
                 :dayNumber="1"
                 buttonText="Imorgon"
                 dayFormat="eee d/M"
@@ -105,6 +107,7 @@
             ></day-select>
 
             <day-select
+                class="day-select-button"
                 :dayNumber="2"
                 buttonText=""
                 dayFormat="eeee d/M"
@@ -114,6 +117,7 @@
             ></day-select>
 
             <day-select
+                class="day-select-button"
                 :dayNumber="3"
                 buttonText=""
                 dayFormat="eeee d/M"
@@ -139,7 +143,11 @@
     .days {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        margin: 1em;
+    }
+
+    .day-select-button {
+        margin-right: 12px;
     }
 }
 
@@ -154,6 +162,9 @@
     }
     .inner {
         margin: 5px;
+    }
+    .chart {
+        padding: 2em;
     }
 }
 </style>

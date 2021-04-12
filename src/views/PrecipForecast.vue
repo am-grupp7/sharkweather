@@ -1,8 +1,7 @@
 <template>
     <div class="main-precipforecast">
         <div class="innertop">
-            <nav>Start > Nederbördsprognos</nav>
-            <div class="find-location">här kan man söka efter städer</div>
+            <div class="find-location"></div>
         </div>
         <div class="innerbottom">
             <div class="info">
@@ -220,10 +219,6 @@ export default {
         display: none;
     }
 
-    div {
-        border: 1px solid black;
-    }
-
     .main-precipforecast {
         display: grid;
         width: 100%;
@@ -250,10 +245,14 @@ export default {
     }
     .info {
         width: 30%;
-        background-color: #daeafb;
+        background-color: #d0e8fb;
+        padding: 1.5em;
+        text-align: left;
+        margin: 1em;
     }
     .graphcontent {
         width: 70%;
+        padding: 1em;
     }
     p {
         padding: 0.25em;

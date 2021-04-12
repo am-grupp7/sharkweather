@@ -1,9 +1,7 @@
 <template>
     <div class="main-tempforecast">
         <div class="innertop">
-            <nav class="topbar">This is the topbar</nav>
-
-            <div class="findlocation">Här kan man söka efter städer!</div>
+            <div class="findlocation"></div>
         </div>
         <div class="innerbottom">
             <div class="infobox">
@@ -90,7 +88,6 @@
         <div class="graph-today">
             <temp-graph></temp-graph>
         </div>
-        <div class="graph-tomorow"></div>
     </div>
 </template>
 
@@ -234,15 +231,13 @@ export default {
         width: 100%;
     }
 
+    p {
+        font-size: 18px;
+    }
+
     .topbar {
         margin-right: 57%;
         margin-top: 1.5em;
-    }
-
-    .infobox,
-    .topbar,
-    .graphcontent {
-        border: 2px solid black;
     }
 
     .innerbottom {
@@ -258,11 +253,18 @@ export default {
     .infobox {
         width: 30%;
         margin-right: 1em;
-        background-color: #daeafb;
+        background-color: #d0e8fb;
+        padding: 1.5em;
+        text-align: left;
+    }
+
+    p {
+        font-size: 18px;
     }
 
     .graphcontent {
         width: 70%;
+        padding: 1em;
     }
 }
 </style>

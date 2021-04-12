@@ -1,72 +1,69 @@
 <template>
-    <div class="about">
+    <div class="desktop">
         <div class="work-here">
-            <div>
-                <img
-                    src="https://cdn.estore.nu/64983-thickbox_default/baby-shark-stort-gosedjur-med-musik---daddy-shark.jpg"
-                    alt=""
-                    width="50"
-                    height="50"
-                />
-                <p class="name">Simon Riemertzon</p>
-            </div>
-            <div>
-                <img
-                    src="https://cdn.estore.nu/64983-thickbox_default/baby-shark-stort-gosedjur-med-musik---daddy-shark.jpg"
-                    alt=""
-                    width="50"
-                    height="50"
-                />
-                <p class="name">Simon Riemertzon</p>
-            </div>
-            <div>
-                <img
-                    src="https://cdn.estore.nu/64983-thickbox_default/baby-shark-stort-gosedjur-med-musik---daddy-shark.jpg"
-                    alt=""
-                    width="50"
-                    height="50"
-                />
-                <p class="name">Simon Riemertzon</p>
-            </div>
-            <div>
-                <img
-                    src="https://cdn.estore.nu/64983-thickbox_default/baby-shark-stort-gosedjur-med-musik---daddy-shark.jpg"
-                    alt=""
-                    width="50"
-                    height="50"
-                />
-                <p class="name">Simon Riemertzon</p>
-            </div>
-            <div>
-                <img
-                    src="https://cdn.estore.nu/64983-thickbox_default/baby-shark-stort-gosedjur-med-musik---daddy-shark.jpg"
-                    alt=""
-                    width="50"
-                    height="50"
-                />
-                <p class="name">Simon Riemertzon</p>
-            </div>
-            <div>
-                <img
-                    src="https://cdn.estore.nu/64983-thickbox_default/baby-shark-stort-gosedjur-med-musik---daddy-shark.jpg"
-                    alt=""
-                    width="50"
-                    height="50"
-                />
-                <p class="name">Simon Riemertzon</p>
-            </div>
-            <div>
-                <img
-                    src="https://cdn.estore.nu/64983-thickbox_default/baby-shark-stort-gosedjur-med-musik---daddy-shark.jpg"
-                    alt=""
-                    width="50"
-                    height="50"
-                />
-                <p class="name">Simon Riemertzon</p>
+            <h4>Vi som arbetar här:</h4>
+            <div class="work-here-content">
+                <div>
+                    <img
+                        class="insta-img"
+                        src="../assets//sharks/rebecca.jpg"
+                        alt="rebecca"
+                    />
+                    <p>Rebecca Hajkovic</p>
+                </div>
+                <div>
+                    <img
+                        class="insta-img"
+                        src="../assets//sharks/alicia.jpg"
+                        alt="alicia"
+                    />
+                    <p>Alicia Sharkpe</p>
+                </div>
+                <div>
+                    <img
+                        class="insta-img"
+                        src="../assets//sharks/sara.jpg"
+                        alt="sara"
+                    />
+                    <p>Sara Hajner</p>
+                </div>
+                <div>
+                    <img
+                        class="insta-img"
+                        src="../assets//sharks/simon.jpg"
+                        alt="simon"
+                    />
+                    <p>Simon</p>
+                </div>
+                <div>
+                    <img
+                        class="insta-img"
+                        src="../assets//sharks/uzair.jpg"
+                        alt="uzair"
+                    />
+                    <p>Uzair</p>
+                </div>
+                <div>
+                    <img
+                        class="insta-img"
+                        src="../assets//sharks/fredrik.jpg"
+                        alt="fredrik"
+                    />
+                    <p>Fredrik</p>
+                </div>
+                <div>
+                    <img
+                        class="insta-img"
+                        src="../assets//sharks/erik.jpg"
+                        alt="erik"
+                    />
+                    <p>Erik</p>
+                </div>
+                <div></div>
             </div>
         </div>
-        <div class="about-us">
-            <h1>Om oss</h1>
+        <div class="about">
+            <h3>Om oss</h3>
             <p>
                 Hajar har ett oförtjänt rykte om att vara hänsynslösa rovdjur
                 som attackerar människor. I själva verket är det mycket
@@ -83,34 +80,39 @@
                 bifångst, och fångst-begränsningar i linje med råd från
                 fiskevårdande organisationer.
             </p>
+            <p class="reply">Hör av dig!</p>
         </div>
-
-        <div class="ceo-photo">
-            <img
-                width="400"
-                src="https://thenationpress.net/imgs/2020/10/1602315522blobid0.jpg"
-                alt=""
-            />
-        </div>
-        <div class="contact">
-            <img
-                src="https://cdn.estore.nu/64983-thickbox_default/baby-shark-stort-gosedjur-med-musik---daddy-shark.jpg"
-                alt=""
-                width="50"
-                height="50"
-            />
-            <img
-                src="https://cdn.estore.nu/64983-thickbox_default/baby-shark-stort-gosedjur-med-musik---daddy-shark.jpg"
-                alt=""
-                width="50"
-                height="50"
-            />
-            <img
-                src="https://cdn.estore.nu/64983-thickbox_default/baby-shark-stort-gosedjur-med-musik---daddy-shark.jpg"
-                alt=""
-                width="50"
-                height="50"
-            />
+        <div class="ceo">
+            <div class="ceo-inner">
+                <img class="ceo-img" src="../assets//ceo.png" alt="CEO" />
+                <p class="vd">Haj Sharksson VD</p>
+            </div>
+            <div class="footer">
+                <div class="envelope">
+                    <img
+                        class="envelope-img"
+                        src="../assets//icons/envelope.svg"
+                        alt="email"
+                    />
+                    <p>hajarna@gmail.com</p>
+                </div>
+                <div class="insta">
+                    <img
+                        class="insta-img"
+                        src="../assets//icons/insta.svg"
+                        alt="instagram"
+                    />
+                    <p>@hajarnasliv</p>
+                </div>
+                <div class="phone">
+                    <img
+                        class="phone-img"
+                        src="../assets//icons/phone.svg"
+                        alt="phone"
+                    />
+                    <p>0711 11 11 11</p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -142,7 +144,17 @@
             </ul>
         </div>
         <div class="top"></div>
-        <div class="image"></div>
+
+        <div class="image">
+            <img
+                class="ceo-img"
+                src="../assets//ceo.png"
+                alt="CEO"
+                width="220"
+            />
+            <p class="vd">Haj Sharksson VD</p>
+        </div>
+
         <div class="text">
             <h3>Om oss</h3>
             <p>
@@ -162,8 +174,31 @@
                 fiskevårdande organisationer.
             </p>
         </div>
-        <div class="footer">
+        <div class="footer-mobile">
             <p>Hör av dig!</p>
+        </div>
+        <div class="footer-icons">
+            <div class="envelope-m">
+                <img
+                    class="envelope-img"
+                    src="../assets//icons/envelope.svg"
+                    alt="email"
+                />
+            </div>
+            <div class="insta-m">
+                <img
+                    class="insta-img"
+                    src="../assets//icons/insta.svg"
+                    alt="instagram"
+                />
+            </div>
+            <div class="phone-m">
+                <img
+                    class="phone-img"
+                    src="../assets//icons/phone.svg"
+                    alt="phone"
+                />
+            </div>
         </div>
     </div>
 </template>
@@ -184,19 +219,53 @@ export default {
         font-size: 18px;
         font-family: Tahoma, sans-serif;
     }
-    .about {
+    .desktop {
         display: none;
     }
     .top {
         height: 160px;
         background-color: #b0d2ee;
     }
+    .image {
+        margin-top: -4em;
+        text-align: center;
+    }
+    .image img {
+        border: 10px solid white;
+    }
+    .image p {
+        font-size: 12px;
+        margin: 0;
+    }
+
     .text {
         padding: 2em;
     }
-    .footer {
+    .footer-mobile {
         text-align: center;
     }
+    .footer-icons {
+        display: flex;
+        margin-bottom: 2em;
+    }
+
+    .footer-icons div {
+        width: 100%;
+    }
+
+    .footer-icons img {
+        width: 30%;
+    }
+    .envelope-m {
+        text-align: right;
+    }
+    .insta-m {
+        text-align: center;
+    }
+    .phone-m {
+        text-align: left;
+    }
+
     .menuimage {
         display: inline-block;
         width: 15%;
@@ -269,15 +338,83 @@ export default {
     .mobile {
         display: none;
     }
-    .about {
-        display: grid;
-        grid-template-columns: 1fr 3fr 2fr;
-        justify-content: space-between;
+    .desktop {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0.5em;
     }
-
+    p {
+        font-size: 18px;
+        line-height: 1.5em;
+    }
+    .reply {
+        text-align: center;
+    }
     .work-here {
-        display: grid;
-        grid-template-columns: 50% 50%;
+        margin: 0.5em;
+        height: 100%;
+        width: 345px;
+        flex-grow: 1;
+        background-color: #d0e8fb;
+        margin: 2em;
+        margin-bottom: 3em;
+    }
+    .work-here h4 {
+        text-align: left;
+        padding-left: 1em;
+    }
+    .work-here-content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .work-here-content p {
+        font-size: 16px;
+    }
+    .work-here-content img {
+        width: 80%;
+    }
+    .about {
+        margin: 0.5em;
+        padding: 1.5em;
+        text-align: left;
+        height: 100%;
+        width: 350px;
+        flex-grow: 3;
+    }
+    .ceo {
+        margin: 0.5em;
+        height: 500px;
+        width: 350px;
+        flex-grow: 1;
+        padding: 1em;
+    }
+    .ceo-inner {
+        max-width: 450px;
+    }
+    .ceo-img {
+        width: 100%;
+    }
+    .vd {
+        text-align: right;
+        padding-right: 1em;
+        font-size: 16px;
+    }
+    .footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .footer p {
+        font-size: 14px;
+    }
+    .envelope-img {
+        width: 30%;
+    }
+    .insta-img {
+        width: 30%;
+    }
+    .phone-img {
+        width: 30%;
     }
 }
 </style>
