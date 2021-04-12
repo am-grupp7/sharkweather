@@ -24,7 +24,7 @@ npm run build
 
 ## Run the project
 
-<a name="runwithnode"></a> Alternative 1 - With Node
+## <a name="runwithnode"></a> Alternative 1 - With Node
 
 ```
 npm run serve
