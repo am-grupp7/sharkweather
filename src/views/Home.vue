@@ -5,9 +5,8 @@
             <h1>Välkommen!</h1>
 
             <p>
-                För att snabbare komma igång ber vi dig att välja din <br />
-                plats, den kommer vara default för informationen som <br />
-                visas, men du kan även ändra den senare.
+                För att snabbare komma igång ber vi dig att använda din nuvarande <br />
+                plats, den kommer vara default för informationen som visas.
             </p>
         </div>
 
@@ -43,15 +42,7 @@
         </div>
 
         <div class="find-location">
-            <div class="serchbar">
-                <input
-                    class="search"
-                    type="text"
-                    name="serch-location"
-                    placeholder="     Sök efter en plats"
-                />
-            </div>
-            <p>eller...</p>
+            
             <div class="your-location">
                 <find-location @geo="findGeoLocation"></find-location>
             </div>
@@ -86,22 +77,11 @@
             </ul>
         </div>
         <div class="logo">
-            <p>Logo Here</p>
+            
         </div>
         <h1 class="h1-mobile">Välkommen!</h1>
 
         <div class="find-location">
-            <div class="search-box">
-                <input
-                    class="search-img"
-                    type="text"
-                    name="serch-location"
-                    placeholder="Sök efter en plats"
-                />
-            </div>
-            <div class="eller">
-                <h5>eller...</h5>
-            </div>
             <div class="search-button">
                 <find-location @geo="findGeoLocation"></find-location>
             </div>

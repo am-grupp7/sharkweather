@@ -54,7 +54,7 @@ export default {
     text-align: center;
     display: inline-block;
     font-size: 14px;
-    width: 70%;
+    width: 100%;
     border-radius: 4px;
 }
 </style>

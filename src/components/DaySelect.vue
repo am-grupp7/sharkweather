@@ -85,9 +85,6 @@ export default {
                     this.chosenDayTimes.push(date)
                 }
             }
-
-            console.log('ChosenDayValues,', this.chosenDayValues)
-            console.log('ChosenDayTimes, ', this.chosenDayTimes)
         },
     },
 }
