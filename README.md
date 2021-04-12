@@ -16,7 +16,7 @@ npm install
 ```
 (If the command is not recognized, it might meen that you haven't installed node yet. If you haven't, please install it from https://nodejs.org/en/download/)
 
-When all files have been downloaded, installed and node gives you a "build complete"-message you should be ready to build the project. (If you want to run the project through node server you can skip this step and continue [here](#runwithnode))
+When all files have been downloaded, installed and node gives you a "build complete"-message you should be ready to build the project. (If you want to run the project through node server you can skip this step and continue at Run the project alternative 1. [here](#runwithnode) )
 
 ```
 npm run build
