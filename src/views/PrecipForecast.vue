@@ -78,10 +78,10 @@
             </ul>
         </div>
         <div class="header">
-            <h3>Nederbörd - fyradagarsprognos</h3>
+            <h3>Nederbörd - tredagarsprognos</h3>
             <p>
                 Prognosen visar förväntad nederbörd i mm per <br />
-                för kommande fyra dagar.
+                för kommande två dagar.
             </p>
         </div>
         <div class="button-div">

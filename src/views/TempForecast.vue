@@ -76,10 +76,10 @@
             </ul>
         </div>
         <div class="header">
-            <h3>Temperatur - fyradagarsprognos</h3>
+            <h3>Temperatur - tredagarsprognos</h3>
             <p>
                 Prognosen visar förväntad temperatur i grader <br />
-                för kommande fyra dagar.
+                för kommande två dagar.
             </p>
         </div>
         <div class="button-div">

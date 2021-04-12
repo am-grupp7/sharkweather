@@ -134,18 +134,6 @@
                 :listTimes="tempListTimes"
                 @selected-values="displayGraph"
             ></day-select>
-
-            <day-select
-                class="day-select-button"
-                :dayNumber="3"
-                buttonText=""
-                dayFormat="eeee d/M"
-                :choseI="50"
-                :choseLimit="54"
-                :listValues="tempListValues"
-                :listTimes="tempListTimes"
-                @selected-values="displayGraph"
-            ></day-select>
         </div>
 
         <apexchart
@@ -158,7 +146,7 @@
 </template>
 
 <style scoped>
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 759px) {
     .desktop {
         display: none;
     }
@@ -172,7 +160,7 @@
     }
 }
 
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 760px) {
     .mobile {
         display: none;
     }

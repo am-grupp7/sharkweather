@@ -350,7 +350,7 @@ export default {
 
     .search {
         background: url(../assets/icons/Sök.svg) no-repeat 5px 10px;
-        background-size: 10%;
+        background-size: 6%;
         background-color: white;
         width: 100%;
         padding: 10px 8px;

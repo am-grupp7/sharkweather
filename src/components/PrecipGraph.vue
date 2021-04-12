@@ -115,16 +115,6 @@
                 :listTimes="precipListTimes"
                 @selected-values="displayGraph"
             ></day-select>
-
-            <day-select
-                class="day-select-button"
-                :dayNumber="3"
-                buttonText=""
-                dayFormat="eeee d/M"
-                :listValues="precipListValues"
-                :listTimes="precipListTimes"
-                @selected-values="displayGraph"
-            ></day-select>
         </div>
         <apexchart
             type="bar"
