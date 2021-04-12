@@ -100,6 +100,7 @@
     <div class="mobile">
         <div class="dayselector">
             <day-select
+                class="day-select-button"
                 :dayNumber="0"
                 buttonText="Idag"
                 dayFormat="eee d/M"
@@ -111,6 +112,7 @@
             ></day-select>
 
             <day-select
+                class="day-select-button"
                 :dayNumber="1"
                 buttonText="Imorgon"
                 dayFormat="eee d/M"
@@ -122,33 +124,12 @@
             ></day-select>
 
             <day-select
+                class="day-select-button"
                 :dayNumber="2"
                 buttonText=""
                 dayFormat="eeee d/M"
                 :choseI="45"
                 :choseLimit="49"
-                :listValues="tempListValues"
-                :listTimes="tempListTimes"
-                @selected-values="displayGraph"
-            ></day-select>
-
-            <day-select
-                :dayNumber="3"
-                buttonText=""
-                dayFormat="eeee d/M"
-                :choseI="50"
-                :choseLimit="54"
-                :listValues="tempListValues"
-                :listTimes="tempListTimes"
-                @selected-values="displayGraph"
-            ></day-select>
-
-            <day-select
-                :dayNumber="4"
-                buttonText=""
-                dayFormat="eeee d/M"
-                :choseI="55"
-                :choseLimit="59"
                 :listValues="tempListValues"
                 :listTimes="tempListTimes"
                 @selected-values="displayGraph"
@@ -165,18 +146,21 @@
 </template>
 
 <style scoped>
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 759px) {
     .desktop {
         display: none;
     }
     .dayselector {
         display: flex;
         flex-direction: row;
-        padding: 1%;
+        margin: 1em;
+    }
+    .day-select-button {
+        margin-right: 12px;
     }
 }
 
-@media only screen and (min-width: 601px) {
+@media only screen and (min-width: 760px) {
     .mobile {
         display: none;
     }
@@ -187,6 +171,9 @@
     }
     .inner {
         margin: 5px;
+    }
+    .chart {
+        padding: 2em;
     }
 }
 </style>
