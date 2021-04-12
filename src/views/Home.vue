@@ -53,11 +53,7 @@
             </div>
             <p>eller...</p>
             <div class="your-location">
-                <input
-                    type="button"
-                    value="Använd din nuvarande plats"
-                    class="button"
-                />
+                <find-location @geo="findGeoLocation"></find-location>
             </div>
         </div>
     </div>
@@ -107,11 +103,7 @@
                 <h5>eller...</h5>
             </div>
             <div class="search-button">
-                <input
-                    type="button"
-                    value="Använd din nuvarande plats"
-                    class="button"
-                />
+                <find-location @geo="findGeoLocation"></find-location>
             </div>
         </div>
 
@@ -159,11 +151,13 @@
 <script>
 // @ is an alias to /src
 import TopTenBoard from '../components/TopTenBoard.vue'
+import FindLocation from '../components/FindLocation.vue'
 
 export default {
     name: 'Home',
     components: {
         TopTenBoard,
+        FindLocation,
     },
 }
 </script>
@@ -524,7 +518,7 @@ export default {
         margin-right: auto;
     }
     .button {
-        background-color: #white;
+        background-color: white;
         border: 1px solid darkblue;
         color: darkblue;
         background-color: white;

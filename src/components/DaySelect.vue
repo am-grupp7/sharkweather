@@ -61,8 +61,6 @@ export default {
     methods: {
         selectDay() {
             this.fillListWithCurrentDay(`${this.dayNumber}`)
-            this.selectedValues = String(this.chosenDayValues)
-            this.selcetedTimes = String(this.chosenDayTimes)
             this.$emit(
                 'selected-values',
                 this.chosenDayValues,
