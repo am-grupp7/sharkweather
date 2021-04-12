@@ -1,6 +1,6 @@
 # sharkweather
 
-##Install and buildinstructions
+## Install and buildinstructions
 
 Navigate in your terminal of choice to a directory where you would like to store the project. 
 
@@ -29,7 +29,7 @@ npm run build
 ```
 npm run serve
 ```
-##Alternative 2 - With VScode and live server 
+## Alternative 2 - With VScode and live server 
 (https://ritwickdey.github.io/vscode-live-server/)
 Navigate to the project and open the project folder with VSCode.
 Press the "Go Live" button in the bottom right corner of VScode and the project should open in your default browser. If you cannot se this button, make sure you have installed Live Server correctly and restart VSCode.
