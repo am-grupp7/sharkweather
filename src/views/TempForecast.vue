@@ -102,6 +102,11 @@ export default {
 </script>
 
 <style scoped>
+@media screen and (max-width: 1200px) {
+    .infobox {
+        display: none;
+    }
+}
 @media screen and (max-width: 767px) {
     .main-tempforecast {
         display: none;

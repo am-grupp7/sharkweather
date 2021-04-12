@@ -78,10 +78,10 @@
             </ul>
         </div>
         <div class="header">
-            <h3>Nederbörd - sjudagarsprognos</h3>
+            <h3>Nederbörd - fyradagarsprognos</h3>
             <p>
                 Prognosen visar förväntad nederbörd i mm per <br />
-                för kommande sju dagar.
+                för kommande fyra dagar.
             </p>
         </div>
         <div class="button-div">
@@ -105,6 +105,11 @@ export default {
 </script>
 
 <style scoped>
+@media screen and (max-width: 1200px) {
+    .info {
+        display: none;
+    }
+}
 @media screen and (max-width: 767px) {
     .main-precipforecast {
         display: none;

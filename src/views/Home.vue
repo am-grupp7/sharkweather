@@ -489,6 +489,7 @@ export default {
         display: block;
         background-color: #b0d2ee;
         width: 100%;
+        padding-bottom: 5em;
     }
 
     .logo {
