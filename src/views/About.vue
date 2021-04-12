@@ -33,7 +33,7 @@
                         src="../assets//sharks/simon.jpg"
                         alt="simon"
                     />
-                    <p>Simon</p>
+                    <p>Simon le Requin</p>
                 </div>
                 <div>
                     <img
@@ -41,7 +41,7 @@
                         src="../assets//sharks/uzair.jpg"
                         alt="uzair"
                     />
-                    <p>Uzair</p>
+                    <p>Uzair McShark</p>
                 </div>
                 <div>
                     <img
@@ -49,7 +49,7 @@
                         src="../assets//sharks/fredrik.jpg"
                         alt="fredrik"
                     />
-                    <p>Fredrik</p>
+                    <p>Fredrik der Hai</p>
                 </div>
                 <div>
                     <img
@@ -57,7 +57,7 @@
                         src="../assets//sharks/erik.jpg"
                         alt="erik"
                     />
-                    <p>Erik</p>
+                    <p>Erik Hajsson</p>
                 </div>
                 <div></div>
             </div>

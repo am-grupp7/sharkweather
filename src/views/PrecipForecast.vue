@@ -1,7 +1,9 @@
 <template>
     <div class="main-precipforecast">
         <div class="innertop">
-            <div class="find-location"></div>
+            <div class="find-location">
+                <find-location @geo="findGeoLocation"></find-location>
+            </div>
         </div>
         <div class="innerbottom">
             <div class="info">
@@ -9,7 +11,7 @@
                     <h3>Nederbörd</h3>
                     <p>
                         Här finns prognoser för nederbörd. <br />
-                        Välj en plats och dag som du vill se prognosen för.
+                        Välj en dag som du vill se prognosen för.
                         Prognoserna kommer från SHMIs öppna api.
                     </p>
                 </div>
@@ -81,12 +83,10 @@
             <h3>Nederbörd - tredagarsprognos</h3>
             <p>
                 Prognosen visar förväntad nederbörd i mm per <br />
-                för kommande två dagar.
+                för kommande tre dagar.
             </p>
         </div>
-        <div class="button-div">
-            <input class="button" type="button" value="Göteborg" />
-        </div>
+        
         <div class="graph-today">
             <precip-graph></precip-graph>
         </div>
@@ -95,11 +95,13 @@
 </template>
 <script>
 import PrecipGraph from '../components/PrecipGraph.vue'
+import FindLocation from '../components/FindLocation.vue'
 
 export default {
     name: 'PrecipForecast',
     components: {
         PrecipGraph,
+        FindLocation,
     },
 }
 </script>
@@ -234,11 +236,9 @@ export default {
         display: flex;
         flex-direction: row;
         width: 100%;
+        margin: 1em;
     }
-    nav {
-        margin-right: 57%;
-        margin-top: 1.5em;
-    }
+    
     .find-location {
         padding-top: 1.5em;
     }
@@ -262,5 +262,6 @@ export default {
     p {
         padding: 0.25em;
     }
+    
 }
 </style>

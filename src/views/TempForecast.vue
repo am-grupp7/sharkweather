@@ -1,7 +1,9 @@
 <template>
     <div class="main-tempforecast">
         <div class="innertop">
-            <div class="findlocation"></div>
+            <div class="findlocation">
+                <find-location @geo="findGeoLocation"></find-location>
+            </div>
         </div>
         <div class="innerbottom">
             <div class="infobox">
@@ -9,7 +11,7 @@
                     <h3>Temperaturer</h3>
                     <p>
                         Här finns prognoser för temperaturer. <br />
-                        Välj en plats och dag som du vill se prognosen för.
+                        Välj en dag som du vill se prognosen för.
                         Prognoserna kommer från SHMIs öppna api.
                     </p>
                 </div>
@@ -79,12 +81,10 @@
             <h3>Temperatur - tredagarsprognos</h3>
             <p>
                 Prognosen visar förväntad temperatur i grader <br />
-                för kommande två dagar.
+                för kommande tre dagar.
             </p>
         </div>
-        <div class="button-div">
-            <input class="button" type="button" value="Göteborg" />
-        </div>
+        
         <div class="graph-today">
             <temp-graph></temp-graph>
         </div>
@@ -93,10 +93,12 @@
 
 <script>
 import TempGraph from '../components/TempGraph.vue'
+import FindLocation from '../components/FindLocation.vue'
 export default {
     name: 'TempForecast',
     components: {
         TempGraph,
+        FindLocation,
     },
 }
 </script>
@@ -234,6 +236,7 @@ export default {
         display: flex;
         flex-direction: row;
         width: 100%;
+        margin: 1em;
     }
 
     p {
