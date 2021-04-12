@@ -1,34 +1,36 @@
 # sharkweather
 
-## Project setup
+##Install and buildinstructions
+
+Navigate in your terminal of choice to a directory where you would like to store the project. 
+
+Run this command to clone the project.
+```
+git clone git@github.com:am-grupp7/sharkweather.git
+```
+When the project is completly downloaded to your machine you will use node to build it. 
+
+Use this command to make node download all necessary files.
 ```
 npm install
 ```
+(If the command is not recognized, it might meen that you haven't installed node yet. If you haven't, please install it from https://nodejs.org/en/download/)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+When all files have been downloaded, installed and node gives you a "build complete"-message you should be ready to build the project. (If you want to run the project through node server you can skip this step and continue [here](#runwithnode))
 
-### Compiles and minifies for production
 ```
 npm run build
 ```
 
-### Run your unit tests
-```
-npm run test:unit
-```
+## Run the project
 
-### Run your end-to-end tests
-```
-npm run test:e2e
-```
+<a name="runwithnode"></a> Alternative 1 - With Node
 
-### Lints and fixes files
 ```
-npm run lint
+npm run serve
 ```
+##Alternative 2 - With VScode and live server 
+(https://ritwickdey.github.io/vscode-live-server/)
+Navigate to the project and open the project folder with VSCode.
+Press the "Go Live" button in the bottom right corner of VScode and the project should open in your default browser. If you cannot se this button, make sure you have installed Live Server correctly and restart VSCode.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
