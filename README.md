@@ -38,3 +38,7 @@ npm run build
 (<https://ritwickdey.github.io/vscode-live-server/>)
 Navigate to the project and open the "dist" folder with VSCode.
 Press the "Go Live" button in the bottom right corner of VScode and the project should open in your default browser. If you cannot see this button, make sure you have installed Live Server correctly and restart VSCode.
+
+## Demo
+
+https://dreamy-noyce-e1a06d.netlify.app/#/
